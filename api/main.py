@@ -1,9 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from api.routes import alerts, control, a2a
 from api.ws import router as ws_router
 from api.audit import verify_audit_chain
 
 app = FastAPI(title="Sanctions Contagion API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(alerts.router)
 app.include_router(control.router)

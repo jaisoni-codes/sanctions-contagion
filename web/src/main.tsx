@@ -15,12 +15,13 @@ function App() {
   const isFixture = import.meta.env.VITE_USE_FIXTURES === '1' || true // Force true for demo since we are bypassing Pathway
 
   useEffect(() => {
-    fetch('/api/overview')
+    const API_URL = import.meta.env.VITE_API_URL || ''
+    fetch(`${API_URL}/api/overview`)
       .then(res => res.json())
       .then(setData)
       .catch(console.error)
 
-    fetch('/api/alerts')
+    fetch(`${API_URL}/api/alerts`)
       .then(res => res.json())
       .then(setAlerts)
       .catch(console.error)
