@@ -1,0 +1,61 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: sc
+      POSTGRES_PASSWORD: sc
+      POSTGRES_DB: sanctions_contagion
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sc -d sanctions_contagion"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: 
+      context: .
+      dockerfile: api/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://sc:sc@postgres:5432/sanctions_contagion
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  engine:
+    build:
+      context: .
+      dockerfile: engine/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://sc:sc@postgres:5432/sanctions_contagion
+      ENGINE_AUTOCOMMIT_MS: 50
+      PERSISTENCE_DIR: /state
+    volumes:
+      - pathway_state:/state
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    build:
+      context: .
+      dockerfile: web/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    environment:
+      VITE_API_URL: http://api:8000
+
+volumes:
+  pgdata:
+  pathway_state:

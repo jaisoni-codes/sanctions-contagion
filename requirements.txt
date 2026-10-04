@@ -1,0 +1,8 @@
+pathway==0.17.0
+fastapi
+uvicorn
+pydantic
+psycopg[binary]
+rapidfuzz
+unidecode
+jellyfish
