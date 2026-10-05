@@ -354,65 +354,7 @@ function App() {
             </div>
           )}
 
-          {activeTab === 'Ownership Explorer' && (
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto h-full">
-              <div className="flex justify-between items-center bg-white p-4 rounded-lg border border-neutral-200">
-                <div>
-                  <h2 className="font-semibold">Aggregated Logistics <span className="text-xs font-normal text-neutral-500">(COMP_AGG_TEST)</span></h2>
-                  <p className="text-xs text-rose-600 mt-1">Derived Blocked (UN Regime)</p>
-                </div>
-                {/* Arithmetic Card */}
-                <div className="bg-rose-50/30 border border-rose-200 rounded p-3 text-xs font-mono text-rose-700">
-                  <span className="text-neutral-500">Aggregate Rule:</span> 30% + 25% = <strong className="text-rose-600 text-sm">55% &gt;= 50%</strong>
-                </div>
-              </div>
-              
-              {/* Mock Graph Visualization */}
-              <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-8 flex flex-col items-center justify-center relative">
-                 {/* Top Nodes (Owners) */}
-                 <div className="flex gap-32 mb-12">
-                   <div className="bg-rose-50 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
-                     <p className="font-bold text-sm text-rose-100">Blocked Owner A</p>
-                     <p className="text-xs text-rose-600">UN: SDN_101</p>
-                   </div>
-                   <div className="bg-rose-50 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
-                     <p className="font-bold text-sm text-rose-100">Blocked Owner B</p>
-                     <p className="text-xs text-rose-600">UN: SDN_102</p>
-                   </div>
-                 </div>
-                 
-                 {/* SVG Lines */}
-                 <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                    <path d="M 350 150 L 450 250" stroke="#f43f5e" strokeWidth="2" fill="none" strokeDasharray="5,5" />
-                    <path d="M 550 150 L 450 250" stroke="#f43f5e" strokeWidth="2" fill="none" strokeDasharray="5,5" />
-                 </svg>
-
-                 {/* Edge Labels */}
-                 <div className="absolute flex gap-40 top-40 text-xs font-bold text-rose-600">
-                    <div className="bg-white p-1 border border-neutral-200 rounded group relative cursor-pointer hover:bg-neutral-100 transition">
-                       <span>30%</span>
-                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-200 border border-neutral-300 p-2 rounded text-[10px] text-neutral-700 w-32 z-50">
-                          <p className="font-mono text-emerald-700 mb-1">DOC_442.pdf</p>
-                          <p>Type: registry_filing</p>
-                       </div>
-                    </div>
-                    <div className="bg-white p-1 border border-neutral-200 rounded group relative cursor-pointer hover:bg-neutral-100 transition">
-                       <span>25%</span>
-                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-200 border border-neutral-300 p-2 rounded text-[10px] text-neutral-700 w-32 z-50">
-                          <p className="font-mono text-emerald-700 mb-1">DOC_109.pdf</p>
-                          <p>Type: MoA</p>
-                       </div>
-                    </div>
-                 </div>
-
-                 {/* Target Node */}
-                 <div className="bg-neutral-50 border-2 border-purple-700 p-4 rounded-lg text-center z-10 relative">
-                     <p className="font-bold text-sm text-purple-900">Aggregated Logistics</p>
-                     <p className="text-xs text-purple-700 mt-1">Status: OWNERSHIP BLOCK</p>
-                 </div>
-              </div>
-            </div>
-          )}
+          {activeTab === 'Ownership Explorer' && <OwnershipExplorer />}
 
           {activeTab === 'Simulation Console' && (
             <div className="flex gap-6 max-w-7xl mx-auto h-full">
