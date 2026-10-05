@@ -1,0 +1,1143 @@
+{
+  "scenario_id": "S21",
+  "steps": [
+    {
+      "stage": 1,
+      "desc": "Delta received (Mohammed Khan)",
+      "elapsed": 5
+    },
+    {
+      "stage": 2,
+      "desc": "Names cleaned and match keys built (mohammad khan)",
+      "elapsed": 29
+    },
+    {
+      "stage": 3,
+      "desc": "Candidates found (11456 of 13807)",
+      "elapsed": 45
+    },
+    {
+      "stage": 4,
+      "desc": "Scores computed (11456 candidates: 303 STRONG, 287 REVIEW, 7864 DISCOUNTED, 2351 dropped)",
+      "elapsed": 59,
+      "candidates": [
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-07-14",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-06-11",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-02-13",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-02-15",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-18",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-08-14",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-06-16",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-03-12",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-09-14",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-09-10",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-09-10",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-11",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-06-13",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-02-14",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-07-16",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-02-19",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-04-19",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-03-14",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-06-16",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-05-11",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "REVIEW"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-08-12",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-1",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-2",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-3",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-4",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-5",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-6",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-7",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-8",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-9",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-10",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-11",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-12",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-13",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-14",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-15",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-16",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-17",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-18",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-19",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-20",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-21",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-22",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-23",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-24",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-25",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-26",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-27",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-28",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-1",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-2",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-3",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-4",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-5",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-6",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-7",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-8",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-9",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-10",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-11",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-12",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-13",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-14",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-15",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-16",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-17",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-18",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-19",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-20",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-21",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-22",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-23",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-24",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-25",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-26",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-27",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-28",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-1",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-2",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-3",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-4",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-5",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-6",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-7",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-8",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-9",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-10",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-11",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-12",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-13",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-14",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-15",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-16",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-17",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-18",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-19",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-20",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-21",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-22",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Mohammed Khan",
+          "dob": "1990-01-23",
+          "country": "UAE",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "desc": "Ownership rounds (No contagion found)",
+      "elapsed": 13
+    },
+    {
+      "stage": 6,
+      "desc": "Alerts created (303 STRONG alerts)",
+      "elapsed": 38
+    },
+    {
+      "stage": 7,
+      "desc": "Result check: Expected 303 alerts. Actual 303 alerts. - PASS",
+      "elapsed": 10,
+      "result": "PASS"
+    }
+  ]
+}

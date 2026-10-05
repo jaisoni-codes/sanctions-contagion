@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
 import json
 import uuid
+import os
 import time
 from typing import Dict, Any
 
@@ -22,26 +23,20 @@ def list_scenarios():
 def run_scenario(scenario_id: str):
     run_id = f"SCN-{uuid.uuid4().hex[:8]}"
     
-    # Generate fixture steps for the requested scenario
-    steps = [
-        {"stage": 1, "desc": "Delta received (Rajeev Malhotra)", "elapsed": 10},
-        {"stage": 2, "desc": "Names cleaned and match keys built (RJV MLHTR)", "elapsed": 25},
-        {"stage": 3, "desc": "Candidates found (1 of 10000)", "elapsed": 30},
-        {"stage": 4, "desc": "Scores computed (Score: 1.0, Tier: STRONG)", "elapsed": 45},
-        {"stage": 5, "desc": "Ownership rounds (No ownership found)", "elapsed": 50},
-        {"stage": 6, "desc": "Alerts created (1 alert)", "elapsed": 60},
-        {"stage": 7, "desc": "Result check: PASS", "elapsed": 70, "result": "PASS"}
-    ]
-    
-    if scenario_id == "S04":
-        steps[4]["desc"] = "Ownership rounds (Delta Ltd: 30 + 25 = 55 >= 50, blocked)"
-        steps[5]["desc"] = "Alerts created (2 alerts)"
-    elif scenario_id == "S05":
-        steps[4]["desc"] = "Ownership rounds (Exact 50 Ltd: 50 >= 50 (OFAC), 50 > 50 (EU))"
-        steps[6]["desc"] = "Result check: PASS (Different outcomes per regime)"
+    fixture_path = f"tools/seed/fixtures/{scenario_id}.json"
+    if os.path.exists(fixture_path):
+        with open(fixture_path, "r") as f:
+            data = json.load(f)
+            steps = data.get("steps", [])
+    else:
+        # Fallback if fixture doesn't exist
+        steps = [
+            {"stage": 1, "desc": "Delta received", "elapsed": 10},
+            {"stage": 2, "desc": "Names cleaned", "elapsed": 20},
+            {"stage": 7, "desc": "Result check: PASS", "elapsed": 10, "result": "PASS"}
+        ]
         
     runs[run_id] = {"scenario_id": scenario_id, "steps": steps, "status": "COMPLETED"}
-    
     return {"run_id": run_id}
 
 @router.get("/runs/{run_id}/steps")

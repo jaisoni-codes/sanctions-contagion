@@ -1,0 +1,1044 @@
+{
+  "scenario_id": "S04",
+  "steps": [
+    {
+      "stage": 1,
+      "desc": "Delta received (Sunita)",
+      "elapsed": 14
+    },
+    {
+      "stage": 2,
+      "desc": "Names cleaned and match keys built (sunita)",
+      "elapsed": 16
+    },
+    {
+      "stage": 3,
+      "desc": "Candidates found (3304 of 13807)",
+      "elapsed": 40
+    },
+    {
+      "stage": 4,
+      "desc": "Scores computed (3304 candidates: 1 STRONG, 0 REVIEW, 301 DISCOUNTED, 10503 dropped)",
+      "elapsed": 78,
+      "candidates": [
+        {
+          "party_name": "Sunita",
+          "dob": "1975-05-05",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Company 0",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 1",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 2",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 3",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 4",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 5",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 6",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 7",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 8",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 9",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 10",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 11",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 12",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 13",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 14",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 15",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 16",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 17",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 18",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 19",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 20",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 21",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 22",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 23",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 24",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 25",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 26",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 27",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 28",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 29",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 30",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 31",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 32",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 33",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 34",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 35",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 36",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 37",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 38",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 39",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 40",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 41",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 42",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 43",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 44",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 45",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 46",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 47",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 48",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 49",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 50",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 51",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 52",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 53",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 54",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 55",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 56",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 57",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 58",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 59",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 60",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 61",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 62",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 63",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 64",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 65",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 66",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 67",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 68",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 69",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 70",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 71",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 72",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 73",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 74",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 75",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 76",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 77",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 78",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 79",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 80",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 81",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 82",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 83",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 84",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 85",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 86",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 87",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 88",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 89",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 90",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 91",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 92",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 93",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 94",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 95",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 96",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 97",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        },
+        {
+          "party_name": "Company 98",
+          "dob": null,
+          "country": "US",
+          "score": 0.0,
+          "reasons": [
+            "ENTITY_TYPE_MISMATCH"
+          ],
+          "tier": "REJECT"
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "desc": "Ownership rounds (Delta Ltd: 30 + 25 = 55 >= 50, blocked)",
+      "elapsed": 55
+    },
+    {
+      "stage": 6,
+      "desc": "Alerts created (2 alerts: 1 direct, 1 ownership)",
+      "elapsed": 64
+    },
+    {
+      "stage": 7,
+      "desc": "Result check: Expected: 2 alerts. Actual: 2 alerts. - PASS",
+      "elapsed": 10,
+      "result": "PASS"
+    }
+  ]
+}

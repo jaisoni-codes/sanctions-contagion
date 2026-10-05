@@ -1,0 +1,1143 @@
+{
+  "scenario_id": "S22",
+  "steps": [
+    {
+      "stage": 1,
+      "desc": "Delta received (Rahul Sharma)",
+      "elapsed": 13
+    },
+    {
+      "stage": 2,
+      "desc": "Names cleaned and match keys built (rahul sharma)",
+      "elapsed": 23
+    },
+    {
+      "stage": 3,
+      "desc": "Candidates found (4476 of 13807)",
+      "elapsed": 25
+    },
+    {
+      "stage": 4,
+      "desc": "Scores computed (4476 candidates: 508 STRONG, 665 REVIEW, 301 DISCOUNTED, 9331 dropped)",
+      "elapsed": 47,
+      "candidates": [
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-03-19",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-07-12",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-08-17",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-07-17",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-06-19",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-08-10",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-06-19",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-06-11",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-1",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-2",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-3",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-4",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-5",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-6",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-7",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-8",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-9",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-10",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": "1980-01-11",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_YEAR_ONLY",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rahul Sharma",
+          "dob": null,
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        }
+      ]
+    },
+    {
+      "stage": 5,
+      "desc": "Ownership rounds (No contagion found)",
+      "elapsed": 11
+    },
+    {
+      "stage": 6,
+      "desc": "Alerts created (508 STRONG alerts)",
+      "elapsed": 23
+    },
+    {
+      "stage": 7,
+      "desc": "Result check: Expected 508 alerts. Actual 508 alerts. - PASS",
+      "elapsed": 10,
+      "result": "PASS"
+    }
+  ]
+}

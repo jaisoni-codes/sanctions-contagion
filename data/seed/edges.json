@@ -1,0 +1,20 @@
+[
+  {
+    "edge_id": "E_S04_1",
+    "owner_id": "CUST_RAJEEV_1",
+    "owned_id": "COMP_DELTA",
+    "pct": 30.0
+  },
+  {
+    "edge_id": "E_S04_2",
+    "owner_id": "CUST_SUNITA_1",
+    "owned_id": "COMP_DELTA",
+    "pct": 25.0
+  },
+  {
+    "edge_id": "E_S05_1",
+    "owner_id": "CUST_RAJEEV_1",
+    "owned_id": "COMP_EXACT50",
+    "pct": 50.0
+  }
+]

@@ -424,8 +424,8 @@ function App() {
                  <div onClick={() => runScenario('S01')} className={`border p-3 rounded cursor-pointer transition ${activeScenario === 'S01' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-neutral-50 hover:border-emerald-500'}`}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="font-bold text-sm text-neutral-800">S01: lone_name</span>
-                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
+                    <p className="text-[10px] text-emerald-700 font-bold mb-1">Expect: 1 STRONG, 3 REVIEW, 0 ownership</p>
                     <p className="text-xs text-neutral-500">Add sanctioned "Rajeev Malhotra", no edges.</p>
                  </div>
                  
@@ -433,8 +433,8 @@ function App() {
                  <div onClick={() => runScenario('S04')} className={`border p-3 rounded cursor-pointer transition ${activeScenario === 'S04' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-neutral-50 hover:border-emerald-500'}`}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="font-bold text-sm text-neutral-800">S04: split_30_25</span>
-                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
+                    <p className="text-[10px] text-emerald-700 font-bold mb-1">Expect: 2 STRONG, 1 OWNERSHIP</p>
                     <p className="text-xs text-neutral-500">Rajeev 30% + Sunita 25% of Delta Ltd (30+25=55).</p>
                  </div>
                  
@@ -442,9 +442,27 @@ function App() {
                  <div onClick={() => runScenario('S05')} className={`border p-3 rounded cursor-pointer transition ${activeScenario === 'S05' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-neutral-50 hover:border-emerald-500'}`}>
                     <div className="flex justify-between items-center mb-1">
                       <span className="font-bold text-sm text-neutral-800">S05: exact_50_single</span>
-                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
+                    <p className="text-[10px] text-emerald-700 font-bold mb-1">Expect: OFAC 2 alerts, EU 1 alert</p>
                     <p className="text-xs text-neutral-500">Rajeev exactly 50%. Show per-regime OFAC vs EU.</p>
+                 </div>
+                 
+                 {/* S21 */}
+                 <div onClick={() => runScenario('S21')} className={`border p-3 rounded cursor-pointer transition ${activeScenario === 'S21' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-neutral-50 hover:border-emerald-500'}`}>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-bold text-sm text-neutral-800">S21: common_name_flood</span>
+                    </div>
+                    <p className="text-[10px] text-emerald-700 font-bold mb-1">Expect: 0 STRONG, bounded REVIEW</p>
+                    <p className="text-xs text-neutral-500">Mohammed Khan, 300+ candidates.</p>
+                 </div>
+                 
+                 {/* S22 */}
+                 <div onClick={() => runScenario('S22')} className={`border p-3 rounded cursor-pointer transition ${activeScenario === 'S22' ? 'border-emerald-500 bg-emerald-50' : 'border-neutral-200 bg-neutral-50 hover:border-emerald-500'}`}>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-bold text-sm text-neutral-800">S22: rahul_sharma</span>
+                    </div>
+                    <p className="text-[10px] text-emerald-700 font-bold mb-1">Expect: 1 STRONG, many DISCOUNTED</p>
+                    <p className="text-xs text-neutral-500">The 500 Rahul Sharma story.</p>
                  </div>
               </div>
 
@@ -461,11 +479,36 @@ function App() {
                  
                  <div className="flex-1 space-y-4 overflow-y-auto">
                     {scenarioSteps.map((step, i) => (
-                      <div key={i} className={`border-l-2 pl-4 relative ${i <= currentStepIndex ? 'border-emerald-500 opacity-100' : 'border-neutral-200 opacity-40'}`}>
-                         <div className={`absolute -left-[9px] top-0 h-4 w-4 rounded-full ring-4 ring-white flex items-center justify-center text-[10px] font-bold ${i <= currentStepIndex ? 'bg-emerald-500 text-white' : 'bg-neutral-300 text-neutral-900'}`}>{step.stage}</div>
+                      <div key={i} className={`border-l-2 pl-6 ml-2 relative ${i <= currentStepIndex ? 'border-emerald-500 opacity-100' : 'border-neutral-200 opacity-40'}`}>
+                         <div className={`absolute -left-[17px] top-0 h-4 w-4 rounded-full ring-4 ring-white flex items-center justify-center text-[10px] font-bold ${i <= currentStepIndex ? 'bg-emerald-500 text-white' : 'bg-neutral-300 text-neutral-900'}`}>{step.stage}</div>
                          <p className="font-medium text-sm text-neutral-900">{step.desc.split('(')[0]}</p>
                          {i <= currentStepIndex && <p className="text-xs text-neutral-500">{step.desc.split('(')[1]?.replace(')','')}</p>}
                          {i <= currentStepIndex && <span className="text-[10px] text-neutral-600 font-mono">{step.elapsed}ms</span>}
+                         {step.stage === 4 && step.candidates && i <= currentStepIndex && (
+                            <div className="mt-2 bg-white rounded border border-neutral-200 overflow-x-auto max-h-40">
+                               <table className="w-full text-[10px] text-left">
+                                  <thead className="bg-neutral-50 sticky top-0">
+                                     <tr>
+                                        <th className="p-1 border-b">Name</th>
+                                        <th className="p-1 border-b">DOB</th>
+                                        <th className="p-1 border-b">Tier</th>
+                                        <th className="p-1 border-b">Score</th>
+                                     </tr>
+                                  </thead>
+                                  <tbody>
+                                     {step.candidates.map((c: any, ci: number) => (
+                                        <tr key={ci} className="border-b border-neutral-100">
+                                           <td className="p-1">{c.party_name}</td>
+                                           <td className="p-1 text-neutral-500">{c.dob || '-'}</td>
+                                           <td className={`p-1 font-bold ${c.tier==='STRONG'?'text-rose-600':c.tier==='REVIEW'?'text-amber-600':'text-neutral-500'}`}>{c.tier}</td>
+                                           <td className="p-1">{c.score.toFixed(2)}</td>
+                                        </tr>
+                                     ))}
+                                  </tbody>
+                               </table>
+                            </div>
+                         )}
+
                       </div>
                     ))}
                     {scenarioSteps.length === 0 && <p className="text-sm text-neutral-500">Select a scenario to run.</p>}
