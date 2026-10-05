@@ -24,6 +24,7 @@ class PartyChange(pw.Schema):
     name: str
     dob: str
     country: str
+    country_of_residence: str
     id_numbers: pw.Json
     op: str
     event_ts: int
@@ -36,6 +37,7 @@ class EdgeChange(pw.Schema):
     owned_id: str
     pct: float
     source_doc: str
+    doc_type: str
     op: str
     event_ts: int
     ingest_ts: int

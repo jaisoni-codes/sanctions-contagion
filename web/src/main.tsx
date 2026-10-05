@@ -345,9 +345,21 @@ function App() {
                  </svg>
 
                  {/* Edge Labels */}
-                 <div className="absolute flex gap-48 top-40 text-xs font-bold text-rose-400 bg-[#111113] px-2">
-                    <span>30%</span>
-                    <span>25%</span>
+                 <div className="absolute flex gap-40 top-40 text-xs font-bold text-rose-400">
+                    <div className="bg-[#111113] p-1 border border-neutral-800 rounded group relative cursor-pointer hover:bg-neutral-800 transition">
+                       <span>30%</span>
+                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 p-2 rounded text-[10px] text-neutral-300 w-32 z-50">
+                          <p className="font-mono text-emerald-400 mb-1">DOC_442.pdf</p>
+                          <p>Type: registry_filing</p>
+                       </div>
+                    </div>
+                    <div className="bg-[#111113] p-1 border border-neutral-800 rounded group relative cursor-pointer hover:bg-neutral-800 transition">
+                       <span>25%</span>
+                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 p-2 rounded text-[10px] text-neutral-300 w-32 z-50">
+                          <p className="font-mono text-emerald-400 mb-1">DOC_109.pdf</p>
+                          <p>Type: MoA</p>
+                       </div>
+                    </div>
                  </div>
 
                  {/* Target Node */}
