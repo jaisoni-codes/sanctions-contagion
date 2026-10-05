@@ -1,0 +1,20 @@
+id: S01
+name: lone_name
+description: Add sanctioned "Rajeev Malhotra" (DOB, country), no ownership edges.
+expected:
+  alerts:
+    - party_id: SCN-CUST_RAJEEV
+      tier: STRONG
+      status: CONFIRMED_BLOCK
+  ownership_alerts: 0
+deltas:
+  - type: PARTY
+    id: SCN-CUST_RAJEEV
+    name: "Rajeev Malhotra"
+    dob: "1980-01-01"
+    country: "India"
+  - type: LIST_ENTRY
+    id: SDN_RAJEEV
+    name: "Rajeev Malhotra"
+    dob: "1980-01-01"
+    country: "India"

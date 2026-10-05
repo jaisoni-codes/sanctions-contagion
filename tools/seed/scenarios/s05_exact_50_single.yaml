@@ -1,0 +1,26 @@
+id: S05
+name: exact_50_single
+description: Rajeev owns exactly 50%. Show per-regime result OFAC vs EU.
+expected:
+  alerts:
+    - party_id: SCN-COMP_EXACT50
+      tier: STRONG
+      status: OWNERSHIP_BLOCK
+      regime: OFAC
+    - party_id: SCN-COMP_EXACT50
+      status: NOT_BLOCKED
+      regime: EU
+deltas:
+  - type: PARTY
+    id: SCN-CUST_RAJEEV
+    name: "Rajeev Malhotra"
+  - type: PARTY
+    id: SCN-COMP_EXACT50
+    name: "Exact 50 Ltd"
+  - type: EDGE
+    owner: SCN-CUST_RAJEEV
+    owned: SCN-COMP_EXACT50
+    pct: 50
+  - type: LIST_ENTRY
+    id: SDN_RAJEEV
+    name: "Rajeev Malhotra"

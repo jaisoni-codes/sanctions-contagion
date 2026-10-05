@@ -372,39 +372,122 @@ function App() {
           )}
 
           {activeTab === 'Simulation Console' && (
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto h-full">
-              <h2 className="text-xl font-semibold border-b border-neutral-800 pb-2">Simulation & Control Console (DEMO MODE)</h2>
-              <div className="grid grid-cols-2 gap-6">
-                 <div className="bg-[#111113] border border-neutral-800 rounded-lg p-5">
-                    <h3 className="font-semibold text-emerald-400 mb-4">Demo Script Scenarios</h3>
-                    <div className="flex flex-col gap-3">
-                       <button className="bg-neutral-800 hover:bg-neutral-700 text-left p-3 rounded flex justify-between items-center transition">
-                         <span>Inject OFAC Delta: Raju Mehra</span>
-                         <PlayCircle size={16} className="text-emerald-500"/>
-                       </button>
-                       <button className="bg-neutral-800 hover:bg-neutral-700 text-left p-3 rounded flex justify-between items-center transition">
-                         <span>Trigger Ownership Chain (Mehra Holdings)</span>
-                         <PlayCircle size={16} className="text-emerald-500"/>
-                       </button>
-                       <button className="bg-neutral-800 hover:bg-neutral-700 text-left p-3 rounded flex justify-between items-center transition">
-                         <span>Inject Homonym Decoys</span>
-                         <PlayCircle size={16} className="text-emerald-500"/>
-                       </button>
-                       <button className="bg-neutral-800 hover:bg-neutral-700 text-left p-3 rounded flex justify-between items-center transition">
-                         <span>Delist Raju Mehra (Cascade Retract)</span>
-                         <PlayCircle size={16} className="text-emerald-500"/>
-                       </button>
+            <div className="flex gap-6 max-w-7xl mx-auto h-full">
+              {/* Left: Catalog */}
+              <div className="w-80 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col gap-3 overflow-y-auto">
+                 <h2 className="text-xl font-semibold mb-2">Scenario Lab <span className="bg-indigo-900/30 text-indigo-400 text-[10px] px-2 py-0.5 rounded ml-2">FIXTURE DATA</span></h2>
+                 
+                 {/* S01 */}
+                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-bold text-sm text-neutral-200">S01: lone_name</span>
+                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                    </div>
+                    <p className="text-xs text-neutral-500">Add sanctioned "Rajeev Malhotra", no edges.</p>
+                 </div>
+                 
+                 {/* S04 */}
+                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-bold text-sm text-neutral-200">S04: split_30_25</span>
+                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                    </div>
+                    <p className="text-xs text-neutral-500">Rajeev 30% + Sunita 25% of Delta Ltd (30+25=55).</p>
+                 </div>
+                 
+                 {/* S05 */}
+                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="font-bold text-sm text-neutral-200">S05: exact_50_single</span>
+                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                    </div>
+                    <p className="text-xs text-neutral-500">Rajeev exactly 50%. Show per-regime OFAC vs EU.</p>
+                 </div>
+                 
+                 <button className="mt-4 w-full bg-neutral-800 hover:bg-neutral-700 text-sm py-2 rounded transition">Load More Scenarios...</button>
+              </div>
+
+              {/* Center: Stepper Player */}
+              <div className="w-96 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col">
+                 <div className="flex justify-between items-center mb-4">
+                    <h3 className="font-semibold">Process Player</h3>
+                    <div className="flex gap-2">
+                       <button className="bg-emerald-600 hover:bg-emerald-500 p-1.5 rounded text-white transition"><PlayCircle size={16}/></button>
+                       <button className="bg-neutral-800 hover:bg-neutral-700 p-1.5 rounded transition"><Pause size={16}/></button>
+                       <button className="bg-neutral-800 hover:bg-neutral-700 p-1.5 rounded transition"><RotateCcw size={16}/></button>
                     </div>
                  </div>
-                 <div className="bg-[#111113] border border-neutral-800 rounded-lg p-5">
-                    <h3 className="font-semibold text-rose-400 mb-4">Engine Recovery Drill</h3>
-                    <div className="flex gap-4 mb-6">
-                       <button className="flex-1 bg-rose-900/50 hover:bg-rose-900 border border-rose-800 text-rose-300 font-bold py-2 rounded transition">KILL ENGINE (SIGKILL)</button>
-                       <button className="flex-1 bg-emerald-900/50 hover:bg-emerald-900 border border-emerald-800 text-emerald-300 font-bold py-2 rounded transition">START ENGINE</button>
+                 
+                 <div className="flex-1 space-y-4">
+                    <div className="border-l-2 border-emerald-500 pl-4 relative">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">1</div>
+                       <p className="font-medium text-sm">Delta Received</p>
+                       <p className="text-xs text-neutral-500">Add sanctioned Rajeev Malhotra</p>
+                       <span className="text-[10px] text-neutral-600 font-mono">10ms</span>
                     </div>
-                    <div className="bg-[#09090b] p-3 rounded border border-neutral-800 text-xs font-mono text-neutral-400 h-32 overflow-y-auto">
-                       &gt; Engine is running (PID 1402)<br/>
-                       &gt; Sink persistence connected to /state
+                    <div className="border-l-2 border-emerald-500 pl-4 relative">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">2</div>
+                       <p className="font-medium text-sm">Clean & Build Keys</p>
+                       <p className="text-xs text-neutral-500">RJV MLHTR</p>
+                       <span className="text-[10px] text-neutral-600 font-mono">25ms</span>
+                    </div>
+                    <div className="border-l-2 border-emerald-500 pl-4 relative">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">3</div>
+                       <p className="font-medium text-sm">Candidates Found</p>
+                       <p className="text-xs text-neutral-500">1 of 10000</p>
+                    </div>
+                    <div className="border-l-2 border-emerald-500 pl-4 relative">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">4</div>
+                       <p className="font-medium text-sm">Scores Computed</p>
+                       <p className="text-xs text-neutral-500">Score: 1.0, Tier: STRONG</p>
+                    </div>
+                    <div className="border-l-2 border-emerald-500 pl-4 relative">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">5</div>
+                       <p className="font-medium text-sm">Ownership Rounds</p>
+                       <p className="text-xs text-neutral-500">Delta Ltd: 30 + 25 = 55 &gt;= 50, blocked</p>
+                    </div>
+                    <div className="border-l-2 border-neutral-800 pl-4 relative opacity-50">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-neutral-800 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">6</div>
+                       <p className="font-medium text-sm">Alerts Created</p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Right: Validation & Graph */}
+              <div className="flex-1 flex flex-col gap-4">
+                 <div className="bg-[#111113] border border-neutral-800 rounded-lg p-5">
+                    <div className="flex justify-between items-center mb-2">
+                       <h3 className="font-semibold">Result Validation</h3>
+                       <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(16,185,129,0.5)]">PASS</span>
+                    </div>
+                    <p className="text-xs text-neutral-400">Expected: 1 alert (OWNERSHIP_BLOCK). Actual: 1 alert. No deviations detected.</p>
+                 </div>
+                 
+                 <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col items-center justify-center relative">
+                    <div className="flex gap-16 mb-12">
+                       <div className="bg-rose-950 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
+                         <p className="font-bold text-xs text-rose-100">Rajeev</p>
+                         <p className="text-[10px] text-rose-400">Blocked</p>
+                       </div>
+                       <div className="bg-rose-950 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
+                         <p className="font-bold text-xs text-rose-100">Sunita</p>
+                         <p className="text-[10px] text-rose-400">Blocked</p>
+                       </div>
+                    </div>
+                    
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                        <path d="M 180 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
+                        <path d="M 320 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
+                    </svg>
+
+                    <div className="absolute flex gap-24 top-[140px] text-xs font-bold text-emerald-400 bg-[#111113] px-1 z-20">
+                        <span>30%</span>
+                        <span>25%</span>
+                    </div>
+
+                    <div className="bg-[#09090b] border-2 border-emerald-700 p-3 rounded text-center z-10 w-32 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all">
+                         <p className="font-bold text-sm text-emerald-100">Delta Ltd</p>
+                         <p className="text-[10px] text-emerald-400 mt-1">OWNERSHIP_BLOCK</p>
                     </div>
                  </div>
               </div>

@@ -1,0 +1,32 @@
+id: S04
+name: split_30_25
+description: Rajeev 30% + sanctioned Sunita 25% of Delta Ltd (30+25=55). Blocked.
+expected:
+  alerts:
+    - party_id: SCN-COMP_DELTA
+      tier: STRONG
+      status: OWNERSHIP_BLOCK
+deltas:
+  - type: PARTY
+    id: SCN-CUST_RAJEEV
+    name: "Rajeev Malhotra"
+  - type: PARTY
+    id: SCN-CUST_SUNITA
+    name: "Sunita Sharma"
+  - type: PARTY
+    id: SCN-COMP_DELTA
+    name: "Delta Ltd"
+  - type: EDGE
+    owner: SCN-CUST_RAJEEV
+    owned: SCN-COMP_DELTA
+    pct: 30
+  - type: EDGE
+    owner: SCN-CUST_SUNITA
+    owned: SCN-COMP_DELTA
+    pct: 25
+  - type: LIST_ENTRY
+    id: SDN_RAJEEV
+    name: "Rajeev Malhotra"
+  - type: LIST_ENTRY
+    id: SDN_SUNITA
+    name: "Sunita Sharma"

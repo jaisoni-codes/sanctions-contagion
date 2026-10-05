@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routes import alerts, control, a2a
+from api.routes import alerts, control, a2a, sim
 from api.ws import router as ws_router
 from api.audit import verify_audit_chain
 
@@ -17,6 +17,7 @@ app.add_middleware(
 app.include_router(alerts.router)
 app.include_router(control.router)
 app.include_router(a2a.router)
+app.include_router(sim.router)
 app.include_router(ws_router)
 
 @app.get("/healthz")
