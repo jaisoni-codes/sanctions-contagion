@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
+import OwnershipExplorer from './OwnershipExplorer'
+import ScenarioGraph from './ScenarioGraph'
 import { 
   Bell, Activity, Users, Building, ShieldAlert, CheckCircle, Search, Menu, 
   Power, List, History, BarChart2, Eye, MessageSquare, Settings, PlayCircle, AlertTriangle, Pause, RotateCcw 
