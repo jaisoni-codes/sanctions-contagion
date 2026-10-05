@@ -14,47 +14,6 @@ function App() {
   const [activeTab, setActiveTab] = useState('Command Center')
   const [killSwitchOpen, setKillSwitchOpen] = useState(false)
 
-  // Alert Integration State
-  const [selectedAlertId, setSelectedAlertId] = useState<string | null>(null)
-  const [externalNotifications, setExternalNotifications] = useState<any[]>([])
-  const [alertDetails, setAlertDetails] = useState<any>(null)
-
-  useEffect(() => {
-      const interval = setInterval(async () => {
-          try {
-             const API_URL = import.meta.env.VITE_API_URL || ''
-             const res = await fetch(`${API_URL}/api/alerts/latest-external`)
-             const newNotifs = await res.json()
-             if (newNotifs && newNotifs.length > 0) {
-                 setExternalNotifications(prev => [...prev, ...newNotifs])
-             }
-          } catch(e) {}
-      }, 3000)
-      return () => clearInterval(interval)
-  }, [])
-
-  useEffect(() => {
-     if (activeTab === 'Alert Detail' && selectedAlertId) {
-         const API_URL = import.meta.env.VITE_API_URL || ''
-         fetch(`${API_URL}/api/alerts/${selectedAlertId}`)
-           .then(res => res.json())
-           .then(data => setAlertDetails(data))
-     }
-  }, [activeTab, selectedAlertId])
-  
-  const handleDecision = async (decision: string) => {
-      if (!selectedAlertId) return;
-      const API_URL = import.meta.env.VITE_API_URL || ''
-      await fetch(`${API_URL}/api/alerts/${selectedAlertId}/decision`, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({decision, reason: "Manual Action"})
-      })
-      alert(`Alert ${decision.toLowerCase()} successfully!`);
-      setActiveTab('Alert Queue');
-  }
-
-
   // Scenario Lab State
   const [activeScenario, setActiveScenario] = useState('S04')
   const [scenarioSteps, setScenarioSteps] = useState<any[]>([])
@@ -324,46 +283,85 @@ function App() {
             </div>
           )}
 
-          
           {activeTab === 'Alert Detail' && (
-              <div className="flex gap-6 h-full max-w-7xl mx-auto">
-                <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col gap-4">
-                  <h3 className="font-semibold text-neutral-800">Alert Context</h3>
-                  {alertDetails ? (
-                      <div className="grid grid-cols-2 gap-4 text-xs">
-                        <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
-                          <h4 className="text-neutral-500 mb-2 uppercase font-semibold">Incoming Request ({alertDetails.party_id})</h4>
-                          <div className="space-y-2 text-neutral-700">
-                             <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-100/30 text-rose-700 px-1 rounded">{alertDetails.party_name}</span></p>
-                             <p><span className="text-neutral-500 w-16 inline-block">Tier:</span> {alertDetails.tier}</p>
-                             <p><span className="text-neutral-500 w-16 inline-block">Status:</span> {alertDetails.status}</p>
-                             <p><span className="text-neutral-500 w-16 inline-block">Reason:</span> {alertDetails.reason}</p>
-                          </div>
-                        </div>
-                        <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
-                          <h4 className="text-neutral-500 mb-2 uppercase font-semibold">Target Entry ({alertDetails.regime})</h4>
-                          <div className="space-y-2 text-neutral-700">
-                             <p><span className="text-neutral-500 w-20 inline-block">List:</span> {alertDetails.regime} SDN</p>
-                             <p><span className="text-neutral-500 w-20 inline-block">Match Score:</span> {(alertDetails.score * 100).toFixed(0)}%</p>
-                          </div>
-                        </div>
-                      </div>
-                  ) : (
-                      <p className="text-sm text-neutral-500">No alert selected or loading...</p>
-                  )}
-                </div>
-                
-                <div className="w-80 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col gap-4">
-                  <h3 className="font-semibold text-neutral-800">Decision</h3>
-                  <div className="flex flex-col gap-2">
-                    <button onClick={() => handleDecision('CONFIRM')} className="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-2 rounded text-sm transition">Block / Reject</button>
-                    <button onClick={() => handleDecision('REJECT')} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 rounded text-sm transition">Clear / Approve</button>
-                    <button onClick={() => handleDecision('ESCALATE')} className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 rounded text-sm transition">Escalate to L2</button>
+            <div className="flex gap-6 h-full max-w-7xl mx-auto">
+              
+              {/* Left Column: Side-by-side Comparison */}
+              <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col gap-4">
+                <h3 className="font-semibold text-neutral-800">Customer vs List Entry</h3>
+                <div className="grid grid-cols-2 gap-4 text-xs">
+                  {/* Customer Card */}
+                  <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
+                    <h4 className="text-neutral-500 mb-2 uppercase font-semibold">Customer (CUST_RAJU_01)</h4>
+                    <div className="space-y-2 text-neutral-700">
+                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-100/30 text-rose-700 px-1 rounded">Raju Mehra</span></p>
+                       <p><span className="text-neutral-500 w-16 inline-block">DOB:</span> 1980-01-01</p>
+                       <p><span className="text-neutral-500 w-16 inline-block">Country:</span> India</p>
+                       <p><span className="text-neutral-500 w-16 inline-block">ID:</span> PASS_1234X</p>
+                    </div>
+                  </div>
+                  {/* List Entry Card */}
+                  <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
+                    <h4 className="text-neutral-500 mb-2 uppercase font-semibold">OFAC Entry (SDN_9901)</h4>
+                    <div className="space-y-2 text-neutral-700">
+                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-100/30 text-rose-700 px-1 rounded">Raju Mehra</span></p>
+                       <p><span className="text-neutral-500 w-16 inline-block">DOB:</span> 1980-01-01</p>
+                       <p><span className="text-neutral-500 w-16 inline-block">Country:</span> India</p>
+                       <p><span className="text-neutral-500 w-16 inline-block">ID:</span> PASS_1234X</p>
+                    </div>
                   </div>
                 </div>
+                
+                {/* Score Breakdown */}
+                <h3 className="font-semibold text-neutral-800 mt-4">Score Breakdown (0.98)</h3>
+                <div className="bg-neutral-50 border border-neutral-200 rounded p-4 text-xs space-y-3">
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Name Match (Token Set)</span> <span className="text-emerald-700">+0.80</span></div>
+                   <div className="w-full bg-neutral-100 h-1.5 rounded-full"><div className="bg-emerald-500 h-1.5 rounded-full" style={{width: '80%'}}></div></div>
+                   
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Exact DOB Bonus</span> <span className="text-emerald-700">+0.10</span></div>
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Country Match Bonus</span> <span className="text-emerald-700">+0.05</span></div>
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Exact ID Bonus</span> <span className="text-emerald-700">+0.03</span></div>
+                   <div className="mt-2 pt-2 border-t border-neutral-200 flex gap-2">
+                     <span className="bg-neutral-100 px-2 py-1 rounded text-neutral-700">DOB_EXACT</span>
+                     <span className="bg-neutral-100 px-2 py-1 rounded text-neutral-700">ID_EXACT</span>
+                   </div>
+                </div>
               </div>
+
+              {/* Right Column: AI & Decision */}
+              <div className="w-96 flex flex-col gap-6">
+                
+                {/* AI Explanation */}
+                <div className="bg-white border border-indigo-900/50 rounded-lg p-5">
+                   <div className="flex items-center justify-between mb-3">
+                     <h3 className="font-semibold text-indigo-800 flex items-center gap-2"><MessageSquare size={16}/> AI Explanation</h3>
+                     <span className="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded border border-indigo-200 font-bold tracking-widest">AI WRITTEN</span>
+                   </div>
+                   <p className="text-xs text-neutral-700 leading-relaxed">
+                     The entity matches the sanctioned entry closely. Reason codes indicate <span className="bg-neutral-100 px-1 rounded cursor-pointer text-indigo-800 hover:underline">DOB_EXACT [E1]</span> and <span className="bg-neutral-100 px-1 rounded cursor-pointer text-indigo-800 hover:underline">ID_EXACT [E2]</span>. The name tokens align perfectly with the OFAC primary name alias.
+                   </p>
+                </div>
+
+                {/* Decision Form */}
+                <div className="bg-white border border-neutral-200 rounded-lg p-5 flex-1">
+                   <h3 className="font-semibold text-neutral-800 mb-4">Analyst Decision</h3>
+                   <div className="space-y-4">
+                     <div>
+                       <label className="text-xs text-neutral-500 mb-1 block">Decision Reason</label>
+                       <textarea className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-xs text-neutral-800 focus:outline-none focus:border-emerald-500 h-24" placeholder="Enter justification..."></textarea>
+                     </div>
+                     <div className="flex gap-2">
+                       <button className="flex-1 bg-rose-600 hover:bg-rose-500 text-neutral-900 text-xs font-bold py-2 rounded transition">CONFIRM BLOCK</button>
+                       <button className="flex-1 bg-neutral-700 hover:bg-neutral-300 text-neutral-900 text-xs font-bold py-2 rounded transition">REJECT (CLEAR)</button>
+                     </div>
+                     <button className="w-full bg-transparent border border-neutral-300 hover:bg-neutral-100 text-neutral-700 text-xs font-bold py-2 rounded transition">ESCALATE TO MLRO</button>
+                   </div>
+                </div>
+              </div>
+            </div>
           )}
-{activeTab === 'Ownership Explorer' && <OwnershipExplorer />}
+
+          {activeTab === 'Ownership Explorer' && <OwnershipExplorer />}
 
           {activeTab === 'Simulation Console' && (
             <div className="flex gap-6 max-w-7xl mx-auto h-full">
