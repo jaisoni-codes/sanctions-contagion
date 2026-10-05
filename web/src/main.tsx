@@ -27,7 +27,7 @@ function App() {
       .catch(console.error)
   }, [])
 
-  if (!data) return <div className="p-8 text-neutral-400">Loading system state...</div>
+  if (!data) return <div className="p-8 text-neutral-500">Loading system state...</div>
 
   const navItems = [
     { name: 'Command Center', icon: Activity },
@@ -44,17 +44,17 @@ function App() {
   ]
 
   const getListPillColor = (status: string) => {
-    if (status === 'fresh') return 'bg-emerald-900 text-emerald-300 border-emerald-700'
+    if (status === 'fresh') return 'bg-emerald-100 text-emerald-800 border-emerald-700'
     if (status === 'stale') return 'bg-amber-900 text-amber-300 border-amber-700'
-    return 'bg-rose-900 text-rose-300 border-rose-700'
+    return 'bg-rose-100 text-rose-700 border-rose-700'
   }
 
   return (
-    <div className="flex h-screen bg-[#09090b] text-neutral-100 font-sans text-sm">
+    <div className="flex h-screen bg-neutral-50 text-neutral-100 font-sans text-sm">
       
       {/* Sidebar */}
-      <div className="w-64 bg-[#111113] border-r border-neutral-800 flex flex-col">
-        <div className="p-4 flex items-center gap-3 border-b border-neutral-800">
+      <div className="w-64 bg-white border-r border-neutral-200 flex flex-col">
+        <div className="p-4 flex items-center gap-3 border-b border-neutral-200">
           <ShieldAlert className="text-emerald-500" />
           <span className="font-bold text-lg tracking-tight">SanctionsOps</span>
         </div>
@@ -63,7 +63,7 @@ function App() {
             <button 
               key={item.name}
               onClick={() => setActiveTab(item.name)} 
-              className={`flex items-center gap-3 px-3 py-2 rounded-md transition text-left ${activeTab === item.name ? 'bg-neutral-800 text-emerald-400 font-medium' : 'text-neutral-400 hover:bg-neutral-800 hover:text-neutral-100'}`}
+              className={`flex items-center gap-3 px-3 py-2 rounded-md transition text-left ${activeTab === item.name ? 'bg-neutral-100 text-emerald-700 font-medium' : 'text-neutral-500 hover:bg-neutral-100 hover:text-neutral-100'}`}
             >
               <item.icon size={16} /> {item.name}
             </button>
@@ -75,13 +75,13 @@ function App() {
       <div className="flex-1 flex flex-col overflow-hidden">
         
         {/* Topbar */}
-        <header className="h-14 border-b border-neutral-800 flex items-center justify-between px-6 bg-[#111113]">
+        <header className="h-14 border-b border-neutral-200 flex items-center justify-between px-6 bg-white">
           <div className="flex items-center gap-4">
             <h1 className="font-semibold text-base">{activeTab}</h1>
             
             {/* Fixture Badge */}
             {isFixture && (
-              <span className="px-2 py-0.5 rounded text-xs font-bold bg-indigo-900 text-indigo-300 border border-indigo-700">
+              <span className="px-2 py-0.5 rounded text-xs font-bold bg-indigo-100 text-indigo-800 border border-indigo-700">
                 FIXTURE DATA
               </span>
             )}
@@ -99,12 +99,12 @@ function App() {
             
             {/* Mode Badge & Kill Switch */}
             <div className="flex items-center gap-2">
-              <span className={`text-xs px-2 py-1 rounded font-bold ${data.mode === 'LIVE' ? 'bg-emerald-950 text-emerald-500' : 'bg-rose-950 text-rose-500'}`}>
+              <span className={`text-xs px-2 py-1 rounded font-bold ${data.mode === 'LIVE' ? 'bg-emerald-50 text-emerald-500' : 'bg-rose-50 text-rose-500'}`}>
                 MODE: {data.mode}
               </span>
               <button 
                 onClick={() => setKillSwitchOpen(true)}
-                className="p-1.5 bg-neutral-800 hover:bg-rose-900 hover:text-rose-300 rounded text-neutral-400 transition"
+                className="p-1.5 bg-neutral-100 hover:bg-rose-100 hover:text-rose-700 rounded text-neutral-500 transition"
                 title="Kill Switch"
               >
                 <Power size={16} />
@@ -116,28 +116,28 @@ function App() {
         </header>
 
         {/* Dashboard Content */}
-        <main className="flex-1 p-6 overflow-auto bg-[#09090b]">
+        <main className="flex-1 p-6 overflow-auto bg-neutral-50">
           
           {activeTab === 'Command Center' && (
             <div className="flex flex-col gap-6 max-w-7xl mx-auto">
               {/* KPI Row 1 */}
               <div className="grid grid-cols-4 gap-4">
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase font-semibold"><Users size={14}/> Customers</div>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs uppercase font-semibold"><Users size={14}/> Customers</div>
                   <div className="text-2xl font-mono">{data.customers.toLocaleString()}</div>
                 </div>
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase font-semibold"><Building size={14}/> Companies</div>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs uppercase font-semibold"><Building size={14}/> Companies</div>
                   <div className="text-2xl font-mono">{data.companies.toLocaleString()}</div>
                 </div>
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-neutral-400 text-xs uppercase font-semibold"><AlertTriangle size={14}/> Alerts by Tier</div>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-neutral-500 text-xs uppercase font-semibold"><AlertTriangle size={14}/> Alerts by Tier</div>
                   <div className="flex gap-3 text-sm mt-1">
-                    <span className="text-rose-400 font-mono"><strong className="text-lg">{data.open_alerts_by_tier?.STRONG || 0}</strong> STRONG</span>
-                    <span className="text-purple-400 font-mono"><strong className="text-lg">{data.open_alerts_by_tier?.OWNERSHIP || 0}</strong> OWN</span>
+                    <span className="text-rose-600 font-mono"><strong className="text-lg">{data.open_alerts_by_tier?.STRONG || 0}</strong> STRONG</span>
+                    <span className="text-purple-700 font-mono"><strong className="text-lg">{data.open_alerts_by_tier?.OWNERSHIP || 0}</strong> OWN</span>
                   </div>
                 </div>
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 flex flex-col gap-2">
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-emerald-500 text-xs uppercase font-semibold"><CheckCircle size={14}/> System Health</div>
                   <div className="text-lg text-emerald-500 mt-1">{data.system_health?.message}</div>
                 </div>
@@ -145,51 +145,51 @@ function App() {
 
               {/* Streaming metrics row */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 col-span-1">
-                   <h3 className="text-xs uppercase font-semibold text-neutral-400 mb-3">Live Delta Feed</h3>
-                   <div className="font-mono text-xs text-neutral-300 space-y-2">
-                     <p className="text-emerald-400">OFAC v412: +3 ~1 -1 applied in 0.4s</p>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 col-span-1">
+                   <h3 className="text-xs uppercase font-semibold text-neutral-500 mb-3">Live Delta Feed</h3>
+                   <div className="font-mono text-xs text-neutral-700 space-y-2">
+                     <p className="text-emerald-700">OFAC v412: +3 ~1 -1 applied in 0.4s</p>
                      <p>UN v99: +0 ~0 -0</p>
                      <p>UK v82: +1 ~0 -0 applied in 0.2s</p>
                      <p className="text-neutral-500 mt-2">Throughput: {data.throughput_eps} EPS</p>
                    </div>
                 </div>
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 col-span-1">
-                   <h3 className="text-xs uppercase font-semibold text-neutral-400 mb-3">Latency Sparkline</h3>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 col-span-1">
+                   <h3 className="text-xs uppercase font-semibold text-neutral-500 mb-3">Latency Sparkline</h3>
                    <div className="flex items-end gap-1 h-16 opacity-70 mb-2">
                       {[12, 15, 14, 18, 22, 15, 16, 45, 14, 13, 15, 12].map((v, i) => (
                         <div key={i} className="w-full bg-emerald-500 rounded-t-sm" style={{height: `${(v/50)*100}%`}}></div>
                       ))}
                    </div>
-                   <div className="flex justify-between text-xs font-mono text-neutral-400">
-                     <span>p50: <span className="text-neutral-200">{data.latency?.p50_ms}ms</span></span>
-                     <span>p95: <span className="text-emerald-400">{data.latency?.p95_ms}ms</span></span>
+                   <div className="flex justify-between text-xs font-mono text-neutral-500">
+                     <span>p50: <span className="text-neutral-800">{data.latency?.p50_ms}ms</span></span>
+                     <span>p95: <span className="text-emerald-700">{data.latency?.p95_ms}ms</span></span>
                    </div>
                 </div>
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-4 col-span-1">
-                   <h3 className="text-xs uppercase font-semibold text-neutral-400 mb-3">Batch vs Stream</h3>
+                <div className="bg-white border border-neutral-200 rounded-lg p-4 col-span-1">
+                   <h3 className="text-xs uppercase font-semibold text-neutral-500 mb-3">Batch vs Stream</h3>
                    <div className="text-xs space-y-3">
-                     <div className="flex justify-between border-b border-neutral-800 pb-1">
+                     <div className="flex justify-between border-b border-neutral-200 pb-1">
                        <span className="text-neutral-500">Nightly Batch</span>
-                       <span className="font-mono text-rose-400">~8.5 hours avg wait</span>
+                       <span className="font-mono text-rose-600">~8.5 hours avg wait</span>
                      </div>
                      <div className="flex justify-between">
                        <span className="text-neutral-500">Streaming Pipeline</span>
-                       <span className="font-mono text-emerald-400">{'< 1.0s (p95)'}</span>
+                       <span className="font-mono text-emerald-700">{'< 1.0s (p95)'}</span>
                      </div>
                    </div>
                 </div>
               </div>
 
               {/* Alert Queue Preview */}
-              <div className="bg-[#111113] border border-neutral-800 rounded-lg overflow-hidden flex flex-col">
-                <div className="p-4 border-b border-neutral-800 flex justify-between items-center">
+              <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden flex flex-col">
+                <div className="p-4 border-b border-neutral-200 flex justify-between items-center">
                   <h2 className="text-sm font-semibold">Recent Alerts</h2>
                   <button onClick={() => setActiveTab('Alert Queue')} className="text-xs text-emerald-500 hover:underline">View All</button>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-xs text-left">
-                    <thead className="bg-[#09090b] text-neutral-400 border-b border-neutral-800">
+                    <thead className="bg-neutral-50 text-neutral-500 border-b border-neutral-200">
                       <tr>
                         <th className="px-4 py-3 font-medium">Alert ID</th>
                         <th className="px-4 py-3 font-medium">Subject</th>
@@ -202,27 +202,27 @@ function App() {
                     </thead>
                     <tbody className="divide-y divide-neutral-800">
                       {alerts.map((alert: any) => (
-                        <tr key={alert.id} className={`hover:bg-neutral-800/30 transition cursor-pointer ${alert.is_retracted ? 'opacity-50' : ''}`}>
-                          <td className={`px-4 py-3 font-mono text-neutral-400 ${alert.is_retracted ? 'line-through' : ''}`}>{alert.id}</td>
-                          <td className="px-4 py-3 font-medium text-neutral-200">
+                        <tr key={alert.id} className={`hover:bg-neutral-100/30 transition cursor-pointer ${alert.is_retracted ? 'opacity-50' : ''}`}>
+                          <td className={`px-4 py-3 font-mono text-neutral-500 ${alert.is_retracted ? 'line-through' : ''}`}>{alert.id}</td>
+                          <td className="px-4 py-3 font-medium text-neutral-800">
                             <div className={alert.is_retracted ? 'line-through' : ''}>{alert.party_name}</div>
                             <div className="text-neutral-500 font-mono text-[10px]">{alert.party_id}</div>
                           </td>
-                          <td className="px-4 py-3 text-neutral-400">{alert.regime}</td>
+                          <td className="px-4 py-3 text-neutral-500">{alert.regime}</td>
                           <td className="px-4 py-3">
                             <span className={`px-2 py-0.5 rounded font-bold ${
-                              alert.tier === 'STRONG' ? 'text-rose-400 border border-rose-900 bg-rose-950/30' :
-                              alert.tier === 'OWNERSHIP' ? 'text-purple-400 border border-purple-900 bg-purple-950/30' :
-                              alert.tier === 'REVIEW' ? 'text-amber-400 border border-amber-900 bg-amber-950/30' :
-                              'text-neutral-400 border border-neutral-700 bg-neutral-800'
+                              alert.tier === 'STRONG' ? 'text-rose-600 border border-rose-200 bg-rose-50/30' :
+                              alert.tier === 'OWNERSHIP' ? 'text-purple-700 border border-purple-900 bg-purple-950/30' :
+                              alert.tier === 'REVIEW' ? 'text-amber-700 border border-amber-200 bg-amber-50/30' :
+                              'text-neutral-500 border border-neutral-300 bg-neutral-100'
                             }`}>
                               {alert.tier}
                             </span>
                           </td>
-                          <td className="px-4 py-3 font-mono text-neutral-400">{alert.score?.toFixed(2)}</td>
-                          <td className="px-4 py-3 font-mono text-neutral-400">{alert.time_to_flag_ms}ms</td>
-                          <td className="px-4 py-3 text-neutral-400">
-                            {alert.status === 'RELEASE_REVIEW' ? <span className="text-amber-400 font-bold">{alert.status}</span> : alert.status}
+                          <td className="px-4 py-3 font-mono text-neutral-500">{alert.score?.toFixed(2)}</td>
+                          <td className="px-4 py-3 font-mono text-neutral-500">{alert.time_to_flag_ms}ms</td>
+                          <td className="px-4 py-3 text-neutral-500">
+                            {alert.status === 'RELEASE_REVIEW' ? <span className="text-amber-700 font-bold">{alert.status}</span> : alert.status}
                           </td>
                         </tr>
                       ))}
@@ -237,24 +237,24 @@ function App() {
             <div className="flex gap-6 h-full max-w-7xl mx-auto">
               
               {/* Left Column: Side-by-side Comparison */}
-              <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col gap-4">
-                <h3 className="font-semibold text-neutral-200">Customer vs List Entry</h3>
+              <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col gap-4">
+                <h3 className="font-semibold text-neutral-800">Customer vs List Entry</h3>
                 <div className="grid grid-cols-2 gap-4 text-xs">
                   {/* Customer Card */}
-                  <div className="bg-[#09090b] border border-neutral-800 p-4 rounded">
+                  <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
                     <h4 className="text-neutral-500 mb-2 uppercase font-semibold">Customer (CUST_RAJU_01)</h4>
-                    <div className="space-y-2 text-neutral-300">
-                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-900/30 text-rose-300 px-1 rounded">Raju Mehra</span></p>
+                    <div className="space-y-2 text-neutral-700">
+                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-100/30 text-rose-700 px-1 rounded">Raju Mehra</span></p>
                        <p><span className="text-neutral-500 w-16 inline-block">DOB:</span> 1980-01-01</p>
                        <p><span className="text-neutral-500 w-16 inline-block">Country:</span> India</p>
                        <p><span className="text-neutral-500 w-16 inline-block">ID:</span> PASS_1234X</p>
                     </div>
                   </div>
                   {/* List Entry Card */}
-                  <div className="bg-[#09090b] border border-neutral-800 p-4 rounded">
+                  <div className="bg-neutral-50 border border-neutral-200 p-4 rounded">
                     <h4 className="text-neutral-500 mb-2 uppercase font-semibold">OFAC Entry (SDN_9901)</h4>
-                    <div className="space-y-2 text-neutral-300">
-                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-900/30 text-rose-300 px-1 rounded">Raju Mehra</span></p>
+                    <div className="space-y-2 text-neutral-700">
+                       <p><span className="text-neutral-500 w-16 inline-block">Name:</span> <span className="bg-rose-100/30 text-rose-700 px-1 rounded">Raju Mehra</span></p>
                        <p><span className="text-neutral-500 w-16 inline-block">DOB:</span> 1980-01-01</p>
                        <p><span className="text-neutral-500 w-16 inline-block">Country:</span> India</p>
                        <p><span className="text-neutral-500 w-16 inline-block">ID:</span> PASS_1234X</p>
@@ -263,17 +263,17 @@ function App() {
                 </div>
                 
                 {/* Score Breakdown */}
-                <h3 className="font-semibold text-neutral-200 mt-4">Score Breakdown (0.98)</h3>
-                <div className="bg-[#09090b] border border-neutral-800 rounded p-4 text-xs space-y-3">
-                   <div className="flex justify-between items-center"><span className="text-neutral-400">Name Match (Token Set)</span> <span className="text-emerald-400">+0.80</span></div>
-                   <div className="w-full bg-neutral-800 h-1.5 rounded-full"><div className="bg-emerald-500 h-1.5 rounded-full" style={{width: '80%'}}></div></div>
+                <h3 className="font-semibold text-neutral-800 mt-4">Score Breakdown (0.98)</h3>
+                <div className="bg-neutral-50 border border-neutral-200 rounded p-4 text-xs space-y-3">
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Name Match (Token Set)</span> <span className="text-emerald-700">+0.80</span></div>
+                   <div className="w-full bg-neutral-100 h-1.5 rounded-full"><div className="bg-emerald-500 h-1.5 rounded-full" style={{width: '80%'}}></div></div>
                    
-                   <div className="flex justify-between items-center"><span className="text-neutral-400">Exact DOB Bonus</span> <span className="text-emerald-400">+0.10</span></div>
-                   <div className="flex justify-between items-center"><span className="text-neutral-400">Country Match Bonus</span> <span className="text-emerald-400">+0.05</span></div>
-                   <div className="flex justify-between items-center"><span className="text-neutral-400">Exact ID Bonus</span> <span className="text-emerald-400">+0.03</span></div>
-                   <div className="mt-2 pt-2 border-t border-neutral-800 flex gap-2">
-                     <span className="bg-neutral-800 px-2 py-1 rounded text-neutral-300">DOB_EXACT</span>
-                     <span className="bg-neutral-800 px-2 py-1 rounded text-neutral-300">ID_EXACT</span>
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Exact DOB Bonus</span> <span className="text-emerald-700">+0.10</span></div>
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Country Match Bonus</span> <span className="text-emerald-700">+0.05</span></div>
+                   <div className="flex justify-between items-center"><span className="text-neutral-500">Exact ID Bonus</span> <span className="text-emerald-700">+0.03</span></div>
+                   <div className="mt-2 pt-2 border-t border-neutral-200 flex gap-2">
+                     <span className="bg-neutral-100 px-2 py-1 rounded text-neutral-700">DOB_EXACT</span>
+                     <span className="bg-neutral-100 px-2 py-1 rounded text-neutral-700">ID_EXACT</span>
                    </div>
                 </div>
               </div>
@@ -282,29 +282,29 @@ function App() {
               <div className="w-96 flex flex-col gap-6">
                 
                 {/* AI Explanation */}
-                <div className="bg-[#111113] border border-indigo-900/50 rounded-lg p-5">
+                <div className="bg-white border border-indigo-900/50 rounded-lg p-5">
                    <div className="flex items-center justify-between mb-3">
-                     <h3 className="font-semibold text-indigo-300 flex items-center gap-2"><MessageSquare size={16}/> AI Explanation</h3>
-                     <span className="text-[10px] bg-indigo-950 text-indigo-400 px-2 py-0.5 rounded border border-indigo-800 font-bold tracking-widest">AI WRITTEN</span>
+                     <h3 className="font-semibold text-indigo-800 flex items-center gap-2"><MessageSquare size={16}/> AI Explanation</h3>
+                     <span className="text-[10px] bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded border border-indigo-200 font-bold tracking-widest">AI WRITTEN</span>
                    </div>
-                   <p className="text-xs text-neutral-300 leading-relaxed">
-                     The entity matches the sanctioned entry closely. Reason codes indicate <span className="bg-neutral-800 px-1 rounded cursor-pointer text-indigo-300 hover:underline">DOB_EXACT [E1]</span> and <span className="bg-neutral-800 px-1 rounded cursor-pointer text-indigo-300 hover:underline">ID_EXACT [E2]</span>. The name tokens align perfectly with the OFAC primary name alias.
+                   <p className="text-xs text-neutral-700 leading-relaxed">
+                     The entity matches the sanctioned entry closely. Reason codes indicate <span className="bg-neutral-100 px-1 rounded cursor-pointer text-indigo-800 hover:underline">DOB_EXACT [E1]</span> and <span className="bg-neutral-100 px-1 rounded cursor-pointer text-indigo-800 hover:underline">ID_EXACT [E2]</span>. The name tokens align perfectly with the OFAC primary name alias.
                    </p>
                 </div>
 
                 {/* Decision Form */}
-                <div className="bg-[#111113] border border-neutral-800 rounded-lg p-5 flex-1">
-                   <h3 className="font-semibold text-neutral-200 mb-4">Analyst Decision</h3>
+                <div className="bg-white border border-neutral-200 rounded-lg p-5 flex-1">
+                   <h3 className="font-semibold text-neutral-800 mb-4">Analyst Decision</h3>
                    <div className="space-y-4">
                      <div>
                        <label className="text-xs text-neutral-500 mb-1 block">Decision Reason</label>
-                       <textarea className="w-full bg-[#09090b] border border-neutral-800 rounded p-2 text-xs text-neutral-200 focus:outline-none focus:border-emerald-500 h-24" placeholder="Enter justification..."></textarea>
+                       <textarea className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-xs text-neutral-800 focus:outline-none focus:border-emerald-500 h-24" placeholder="Enter justification..."></textarea>
                      </div>
                      <div className="flex gap-2">
-                       <button className="flex-1 bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold py-2 rounded transition">CONFIRM BLOCK</button>
-                       <button className="flex-1 bg-neutral-700 hover:bg-neutral-600 text-white text-xs font-bold py-2 rounded transition">REJECT (CLEAR)</button>
+                       <button className="flex-1 bg-rose-600 hover:bg-rose-500 text-neutral-900 text-xs font-bold py-2 rounded transition">CONFIRM BLOCK</button>
+                       <button className="flex-1 bg-neutral-700 hover:bg-neutral-300 text-neutral-900 text-xs font-bold py-2 rounded transition">REJECT (CLEAR)</button>
                      </div>
-                     <button className="w-full bg-transparent border border-neutral-700 hover:bg-neutral-800 text-neutral-300 text-xs font-bold py-2 rounded transition">ESCALATE TO MLRO</button>
+                     <button className="w-full bg-transparent border border-neutral-300 hover:bg-neutral-100 text-neutral-700 text-xs font-bold py-2 rounded transition">ESCALATE TO MLRO</button>
                    </div>
                 </div>
               </div>
@@ -313,28 +313,28 @@ function App() {
 
           {activeTab === 'Ownership Explorer' && (
             <div className="flex flex-col gap-6 max-w-5xl mx-auto h-full">
-              <div className="flex justify-between items-center bg-[#111113] p-4 rounded-lg border border-neutral-800">
+              <div className="flex justify-between items-center bg-white p-4 rounded-lg border border-neutral-200">
                 <div>
                   <h2 className="font-semibold">Aggregated Logistics <span className="text-xs font-normal text-neutral-500">(COMP_AGG_TEST)</span></h2>
-                  <p className="text-xs text-rose-400 mt-1">Derived Blocked (UN Regime)</p>
+                  <p className="text-xs text-rose-600 mt-1">Derived Blocked (UN Regime)</p>
                 </div>
                 {/* Arithmetic Card */}
-                <div className="bg-rose-950/30 border border-rose-900 rounded p-3 text-xs font-mono text-rose-300">
-                  <span className="text-neutral-400">Aggregate Rule:</span> 30% + 25% = <strong className="text-rose-400 text-sm">55% &gt;= 50%</strong>
+                <div className="bg-rose-50/30 border border-rose-200 rounded p-3 text-xs font-mono text-rose-700">
+                  <span className="text-neutral-500">Aggregate Rule:</span> 30% + 25% = <strong className="text-rose-600 text-sm">55% &gt;= 50%</strong>
                 </div>
               </div>
               
               {/* Mock Graph Visualization */}
-              <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-8 flex flex-col items-center justify-center relative">
+              <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-8 flex flex-col items-center justify-center relative">
                  {/* Top Nodes (Owners) */}
                  <div className="flex gap-32 mb-12">
-                   <div className="bg-rose-950 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
+                   <div className="bg-rose-50 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
                      <p className="font-bold text-sm text-rose-100">Blocked Owner A</p>
-                     <p className="text-xs text-rose-400">UN: SDN_101</p>
+                     <p className="text-xs text-rose-600">UN: SDN_101</p>
                    </div>
-                   <div className="bg-rose-950 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
+                   <div className="bg-rose-50 border-2 border-rose-700 p-3 rounded-lg text-center shadow-[0_0_15px_rgba(225,29,72,0.3)] z-10 relative">
                      <p className="font-bold text-sm text-rose-100">Blocked Owner B</p>
-                     <p className="text-xs text-rose-400">UN: SDN_102</p>
+                     <p className="text-xs text-rose-600">UN: SDN_102</p>
                    </div>
                  </div>
                  
@@ -345,27 +345,27 @@ function App() {
                  </svg>
 
                  {/* Edge Labels */}
-                 <div className="absolute flex gap-40 top-40 text-xs font-bold text-rose-400">
-                    <div className="bg-[#111113] p-1 border border-neutral-800 rounded group relative cursor-pointer hover:bg-neutral-800 transition">
+                 <div className="absolute flex gap-40 top-40 text-xs font-bold text-rose-600">
+                    <div className="bg-white p-1 border border-neutral-200 rounded group relative cursor-pointer hover:bg-neutral-100 transition">
                        <span>30%</span>
-                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 p-2 rounded text-[10px] text-neutral-300 w-32 z-50">
-                          <p className="font-mono text-emerald-400 mb-1">DOC_442.pdf</p>
+                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-200 border border-neutral-300 p-2 rounded text-[10px] text-neutral-700 w-32 z-50">
+                          <p className="font-mono text-emerald-700 mb-1">DOC_442.pdf</p>
                           <p>Type: registry_filing</p>
                        </div>
                     </div>
-                    <div className="bg-[#111113] p-1 border border-neutral-800 rounded group relative cursor-pointer hover:bg-neutral-800 transition">
+                    <div className="bg-white p-1 border border-neutral-200 rounded group relative cursor-pointer hover:bg-neutral-100 transition">
                        <span>25%</span>
-                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-900 border border-neutral-700 p-2 rounded text-[10px] text-neutral-300 w-32 z-50">
-                          <p className="font-mono text-emerald-400 mb-1">DOC_109.pdf</p>
+                       <div className="hidden group-hover:block absolute bottom-full mb-1 left-1/2 -translate-x-1/2 bg-neutral-200 border border-neutral-300 p-2 rounded text-[10px] text-neutral-700 w-32 z-50">
+                          <p className="font-mono text-emerald-700 mb-1">DOC_109.pdf</p>
                           <p>Type: MoA</p>
                        </div>
                     </div>
                  </div>
 
                  {/* Target Node */}
-                 <div className="bg-[#09090b] border-2 border-purple-700 p-4 rounded-lg text-center z-10 relative">
-                     <p className="font-bold text-sm text-purple-100">Aggregated Logistics</p>
-                     <p className="text-xs text-purple-400 mt-1">Status: OWNERSHIP BLOCK</p>
+                 <div className="bg-neutral-50 border-2 border-purple-700 p-4 rounded-lg text-center z-10 relative">
+                     <p className="font-bold text-sm text-purple-900">Aggregated Logistics</p>
+                     <p className="text-xs text-purple-700 mt-1">Status: OWNERSHIP BLOCK</p>
                  </div>
               </div>
             </div>
@@ -374,80 +374,80 @@ function App() {
           {activeTab === 'Simulation Console' && (
             <div className="flex gap-6 max-w-7xl mx-auto h-full">
               {/* Left: Catalog */}
-              <div className="w-80 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col gap-3 overflow-y-auto">
-                 <h2 className="text-xl font-semibold mb-2">Scenario Lab <span className="bg-indigo-900/30 text-indigo-400 text-[10px] px-2 py-0.5 rounded ml-2">FIXTURE DATA</span></h2>
+              <div className="w-80 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col gap-3 overflow-y-auto">
+                 <h2 className="text-xl font-semibold mb-2">Scenario Lab <span className="bg-indigo-100/30 text-indigo-700 text-[10px] px-2 py-0.5 rounded ml-2">FIXTURE DATA</span></h2>
                  
                  {/* S01 */}
-                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                 <div className="bg-neutral-50 border border-neutral-200 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-sm text-neutral-200">S01: lone_name</span>
-                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                      <span className="font-bold text-sm text-neutral-800">S01: lone_name</span>
+                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
                     <p className="text-xs text-neutral-500">Add sanctioned "Rajeev Malhotra", no edges.</p>
                  </div>
                  
                  {/* S04 */}
-                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                 <div className="bg-neutral-50 border border-neutral-200 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-sm text-neutral-200">S04: split_30_25</span>
-                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                      <span className="font-bold text-sm text-neutral-800">S04: split_30_25</span>
+                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
                     <p className="text-xs text-neutral-500">Rajeev 30% + Sunita 25% of Delta Ltd (30+25=55).</p>
                  </div>
                  
                  {/* S05 */}
-                 <div className="bg-[#09090b] border border-neutral-800 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
+                 <div className="bg-neutral-50 border border-neutral-200 p-3 rounded cursor-pointer hover:border-emerald-500 transition">
                     <div className="flex justify-between items-center mb-1">
-                      <span className="font-bold text-sm text-neutral-200">S05: exact_50_single</span>
-                      <span className="bg-emerald-950/30 text-emerald-400 text-[10px] px-1 rounded border border-emerald-900">PASS EXPECTED</span>
+                      <span className="font-bold text-sm text-neutral-800">S05: exact_50_single</span>
+                      <span className="bg-emerald-50/30 text-emerald-700 text-[10px] px-1 rounded border border-emerald-200">PASS EXPECTED</span>
                     </div>
                     <p className="text-xs text-neutral-500">Rajeev exactly 50%. Show per-regime OFAC vs EU.</p>
                  </div>
                  
-                 <button className="mt-4 w-full bg-neutral-800 hover:bg-neutral-700 text-sm py-2 rounded transition">Load More Scenarios...</button>
+                 <button className="mt-4 w-full bg-neutral-100 hover:bg-neutral-200 text-sm py-2 rounded transition">Load More Scenarios...</button>
               </div>
 
               {/* Center: Stepper Player */}
-              <div className="w-96 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col">
+              <div className="w-96 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col">
                  <div className="flex justify-between items-center mb-4">
                     <h3 className="font-semibold">Process Player</h3>
                     <div className="flex gap-2">
-                       <button className="bg-emerald-600 hover:bg-emerald-500 p-1.5 rounded text-white transition"><PlayCircle size={16}/></button>
-                       <button className="bg-neutral-800 hover:bg-neutral-700 p-1.5 rounded transition"><Pause size={16}/></button>
-                       <button className="bg-neutral-800 hover:bg-neutral-700 p-1.5 rounded transition"><RotateCcw size={16}/></button>
+                       <button className="bg-emerald-600 hover:bg-emerald-500 p-1.5 rounded text-neutral-900 transition"><PlayCircle size={16}/></button>
+                       <button className="bg-neutral-100 hover:bg-neutral-200 p-1.5 rounded transition"><Pause size={16}/></button>
+                       <button className="bg-neutral-100 hover:bg-neutral-200 p-1.5 rounded transition"><RotateCcw size={16}/></button>
                     </div>
                  </div>
                  
                  <div className="flex-1 space-y-4">
                     <div className="border-l-2 border-emerald-500 pl-4 relative">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">1</div>
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">1</div>
                        <p className="font-medium text-sm">Delta Received</p>
                        <p className="text-xs text-neutral-500">Add sanctioned Rajeev Malhotra</p>
                        <span className="text-[10px] text-neutral-600 font-mono">10ms</span>
                     </div>
                     <div className="border-l-2 border-emerald-500 pl-4 relative">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">2</div>
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">2</div>
                        <p className="font-medium text-sm">Clean & Build Keys</p>
                        <p className="text-xs text-neutral-500">RJV MLHTR</p>
                        <span className="text-[10px] text-neutral-600 font-mono">25ms</span>
                     </div>
                     <div className="border-l-2 border-emerald-500 pl-4 relative">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">3</div>
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">3</div>
                        <p className="font-medium text-sm">Candidates Found</p>
                        <p className="text-xs text-neutral-500">1 of 10000</p>
                     </div>
                     <div className="border-l-2 border-emerald-500 pl-4 relative">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">4</div>
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">4</div>
                        <p className="font-medium text-sm">Scores Computed</p>
                        <p className="text-xs text-neutral-500">Score: 1.0, Tier: STRONG</p>
                     </div>
                     <div className="border-l-2 border-emerald-500 pl-4 relative">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">5</div>
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-emerald-500 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">5</div>
                        <p className="font-medium text-sm">Ownership Rounds</p>
                        <p className="text-xs text-neutral-500">Delta Ltd: 30 + 25 = 55 &gt;= 50, blocked</p>
                     </div>
-                    <div className="border-l-2 border-neutral-800 pl-4 relative opacity-50">
-                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-neutral-800 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-white">6</div>
+                    <div className="border-l-2 border-neutral-200 pl-4 relative opacity-50">
+                       <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-neutral-100 ring-4 ring-[#111113] flex items-center justify-center text-[10px] font-bold text-neutral-900">6</div>
                        <p className="font-medium text-sm">Alerts Created</p>
                     </div>
                  </div>
@@ -455,23 +455,23 @@ function App() {
 
               {/* Right: Validation & Graph */}
               <div className="flex-1 flex flex-col gap-4">
-                 <div className="bg-[#111113] border border-neutral-800 rounded-lg p-5">
+                 <div className="bg-white border border-neutral-200 rounded-lg p-5">
                     <div className="flex justify-between items-center mb-2">
                        <h3 className="font-semibold">Result Validation</h3>
-                       <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(16,185,129,0.5)]">PASS</span>
+                       <span className="bg-emerald-500 text-neutral-900 text-xs px-2 py-1 rounded font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(16,185,129,0.5)]">PASS</span>
                     </div>
-                    <p className="text-xs text-neutral-400">Expected: 1 alert (OWNERSHIP_BLOCK). Actual: 1 alert. No deviations detected.</p>
+                    <p className="text-xs text-neutral-500">Expected: 1 alert (OWNERSHIP_BLOCK). Actual: 1 alert. No deviations detected.</p>
                  </div>
                  
-                 <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col items-center justify-center relative">
+                 <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col items-center justify-center relative">
                     <div className="flex gap-16 mb-12">
-                       <div className="bg-rose-950 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
+                       <div className="bg-rose-50 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
                          <p className="font-bold text-xs text-rose-100">Rajeev</p>
-                         <p className="text-[10px] text-rose-400">Blocked</p>
+                         <p className="text-[10px] text-rose-600">Blocked</p>
                        </div>
-                       <div className="bg-rose-950 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
+                       <div className="bg-rose-50 border-2 border-rose-700 p-2 rounded text-center z-10 w-28 shadow-[0_0_10px_rgba(225,29,72,0.3)]">
                          <p className="font-bold text-xs text-rose-100">Sunita</p>
-                         <p className="text-[10px] text-rose-400">Blocked</p>
+                         <p className="text-[10px] text-rose-600">Blocked</p>
                        </div>
                     </div>
                     
@@ -480,14 +480,14 @@ function App() {
                         <path d="M 320 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
                     </svg>
 
-                    <div className="absolute flex gap-24 top-[140px] text-xs font-bold text-emerald-400 bg-[#111113] px-1 z-20">
+                    <div className="absolute flex gap-24 top-[140px] text-xs font-bold text-emerald-700 bg-white px-1 z-20">
                         <span>30%</span>
                         <span>25%</span>
                     </div>
 
-                    <div className="bg-[#09090b] border-2 border-emerald-700 p-3 rounded text-center z-10 w-32 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all">
+                    <div className="bg-neutral-50 border-2 border-emerald-700 p-3 rounded text-center z-10 w-32 shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-all">
                          <p className="font-bold text-sm text-emerald-100">Delta Ltd</p>
-                         <p className="text-[10px] text-emerald-400 mt-1">OWNERSHIP_BLOCK</p>
+                         <p className="text-[10px] text-emerald-700 mt-1">OWNERSHIP_BLOCK</p>
                     </div>
                  </div>
               </div>
@@ -499,13 +499,13 @@ function App() {
               <div className="flex justify-between items-center">
                  <h2 className="text-xl font-semibold">Active Alert Queue</h2>
                  <div className="flex gap-2">
-                    <input type="text" placeholder="Filter alerts..." className="bg-[#09090b] border border-neutral-800 rounded px-3 py-1.5 text-sm text-white" />
-                    <button className="bg-neutral-800 px-3 py-1.5 rounded text-sm hover:bg-neutral-700 transition">Filter</button>
+                    <input type="text" placeholder="Filter alerts..." className="bg-neutral-50 border border-neutral-200 rounded px-3 py-1.5 text-sm text-neutral-900" />
+                    <button className="bg-neutral-100 px-3 py-1.5 rounded text-sm hover:bg-neutral-200 transition">Filter</button>
                  </div>
               </div>
-              <div className="bg-[#111113] border border-neutral-800 rounded-lg overflow-hidden flex-1 flex flex-col">
+              <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden flex-1 flex flex-col">
                   <table className="w-full text-sm text-left">
-                    <thead className="bg-[#09090b] text-neutral-400 border-b border-neutral-800">
+                    <thead className="bg-neutral-50 text-neutral-500 border-b border-neutral-200">
                       <tr>
                         <th className="px-4 py-3 font-medium">Alert ID</th>
                         <th className="px-4 py-3 font-medium">Subject</th>
@@ -518,16 +518,16 @@ function App() {
                     </thead>
                     <tbody className="divide-y divide-neutral-800">
                       {alerts.map((alert: any) => (
-                        <tr key={alert.id} className="hover:bg-neutral-800/30 transition cursor-pointer">
-                          <td className="px-4 py-4 font-mono text-neutral-400">{alert.id}</td>
+                        <tr key={alert.id} className="hover:bg-neutral-100/30 transition cursor-pointer">
+                          <td className="px-4 py-4 font-mono text-neutral-500">{alert.id}</td>
                           <td className="px-4 py-4 font-medium">{alert.party_name}</td>
                           <td className="px-4 py-4">
-                            <span className={`px-2 py-0.5 rounded font-bold text-xs ${alert.tier === 'STRONG' ? 'text-rose-400 bg-rose-950/30 border border-rose-900' : 'text-amber-400 bg-amber-950/30 border border-amber-900'}`}>{alert.tier}</span>
+                            <span className={`px-2 py-0.5 rounded font-bold text-xs ${alert.tier === 'STRONG' ? 'text-rose-600 bg-rose-50/30 border border-rose-200' : 'text-amber-700 bg-amber-50/30 border border-amber-200'}`}>{alert.tier}</span>
                           </td>
                           <td className="px-4 py-4 font-mono">{alert.score?.toFixed(2)}</td>
-                          <td className="px-4 py-4 text-neutral-400">{alert.status}</td>
+                          <td className="px-4 py-4 text-neutral-500">{alert.status}</td>
                           <td className="px-4 py-4 text-neutral-500">Unassigned</td>
-                          <td className="px-4 py-4 text-neutral-400">{alert.time_to_flag_ms}ms</td>
+                          <td className="px-4 py-4 text-neutral-500">{alert.time_to_flag_ms}ms</td>
                         </tr>
                       ))}
                     </tbody>
@@ -538,16 +538,16 @@ function App() {
 
           {activeTab === 'Sanctions Lists' && (
             <div className="flex flex-col gap-6 max-w-5xl mx-auto h-full">
-              <h2 className="text-xl font-semibold border-b border-neutral-800 pb-2">Sanctions Regimes & Versions</h2>
+              <h2 className="text-xl font-semibold border-b border-neutral-200 pb-2">Sanctions Regimes & Versions</h2>
               <div className="grid grid-cols-2 gap-4">
                  {['OFAC SDN', 'UN Consolidated', 'EU Consolidated', 'UK HMT'].map(regime => (
-                   <div key={regime} className="bg-[#111113] border border-neutral-800 rounded-lg p-5">
+                   <div key={regime} className="bg-white border border-neutral-200 rounded-lg p-5">
                       <div className="flex justify-between items-center mb-3">
                          <h3 className="font-semibold">{regime}</h3>
-                         <span className="bg-emerald-900/30 border border-emerald-800 text-emerald-400 px-2 py-0.5 rounded text-xs">Active v412</span>
+                         <span className="bg-emerald-100/30 border border-emerald-800 text-emerald-700 px-2 py-0.5 rounded text-xs">Active v412</span>
                       </div>
-                      <p className="text-sm text-neutral-400 mb-4">Last update: 2 minutes ago</p>
-                      <button className="w-full bg-neutral-800 hover:bg-neutral-700 text-sm py-2 rounded transition">Browse Entries</button>
+                      <p className="text-sm text-neutral-500 mb-4">Last update: 2 minutes ago</p>
+                      <button className="w-full bg-neutral-100 hover:bg-neutral-200 text-sm py-2 rounded transition">Browse Entries</button>
                    </div>
                  ))}
               </div>
@@ -556,21 +556,21 @@ function App() {
 
           {activeTab === 'Audit & Compliance' && (
             <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
-              <div className="flex justify-between items-center border-b border-neutral-800 pb-2">
+              <div className="flex justify-between items-center border-b border-neutral-200 pb-2">
                  <h2 className="text-xl font-semibold">Immutable Audit Trail</h2>
-                 <button className="flex items-center gap-2 bg-indigo-900/30 border border-indigo-800 text-indigo-300 hover:bg-indigo-900 px-4 py-2 rounded text-sm transition">
+                 <button className="flex items-center gap-2 bg-indigo-100/30 border border-indigo-200 text-indigo-800 hover:bg-indigo-100 px-4 py-2 rounded text-sm transition">
                     <CheckCircle size={16}/> Verify Hash Chain
                  </button>
               </div>
               <div className="flex gap-6 h-full">
-                 <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-5 flex flex-col">
-                    <h3 className="font-semibold mb-4 text-sm text-neutral-400 uppercase">Decision Timeline</h3>
-                    <div className="flex-1 border-l-2 border-neutral-800 ml-4 pl-4 space-y-6">
+                 <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col">
+                    <h3 className="font-semibold mb-4 text-sm text-neutral-500 uppercase">Decision Timeline</h3>
+                    <div className="flex-1 border-l-2 border-neutral-200 ml-4 pl-4 space-y-6">
                        <div className="relative">
                           <div className="absolute -left-[23px] top-1 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#111113]"></div>
                           <p className="text-xs text-neutral-500 mb-1">Today, 10:15 AM</p>
                           <p className="font-medium">Alert CONFIRMED by Analyst_1</p>
-                          <p className="text-xs text-neutral-400 mt-1">Reason: "DOB and ID match exactly. Escaping homonym check."</p>
+                          <p className="text-xs text-neutral-500 mt-1">Reason: "DOB and ID match exactly. Escaping homonym check."</p>
                        </div>
                        <div className="relative">
                           <div className="absolute -left-[23px] top-1 h-3 w-3 rounded-full bg-indigo-500 ring-4 ring-[#111113]"></div>
@@ -585,18 +585,18 @@ function App() {
                        </div>
                     </div>
                  </div>
-                 <div className="w-80 bg-[#111113] border border-neutral-800 rounded-lg p-5">
-                    <h3 className="font-semibold mb-4 text-sm text-neutral-400 uppercase">As-Of Query</h3>
+                 <div className="w-80 bg-white border border-neutral-200 rounded-lg p-5">
+                    <h3 className="font-semibold mb-4 text-sm text-neutral-500 uppercase">As-Of Query</h3>
                     <div className="space-y-4">
                        <div>
                          <label className="text-xs text-neutral-500 block mb-1">Party ID</label>
-                         <input type="text" className="w-full bg-[#09090b] border border-neutral-800 rounded p-2 text-sm text-white" defaultValue="CUST_RAJU_01"/>
+                         <input type="text" className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-sm text-neutral-900" defaultValue="CUST_RAJU_01"/>
                        </div>
                        <div>
                          <label className="text-xs text-neutral-500 block mb-1">Time Point</label>
-                         <input type="datetime-local" className="w-full bg-[#09090b] border border-neutral-800 rounded p-2 text-sm text-white [color-scheme:dark]" />
+                         <input type="datetime-local" className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-sm text-neutral-900 [color-scheme:light]" />
                        </div>
-                       <button className="w-full bg-neutral-800 hover:bg-neutral-700 py-2 rounded text-sm transition">Query State</button>
+                       <button className="w-full bg-neutral-100 hover:bg-neutral-200 py-2 rounded text-sm transition">Query State</button>
                     </div>
                  </div>
               </div>
@@ -606,21 +606,21 @@ function App() {
           {activeTab === 'Metrics & Evaluation' && (
             <div className="flex flex-col items-center justify-center h-full text-neutral-500">
               <BarChart2 size={48} className="mb-4 opacity-20 text-emerald-500" />
-              <p className="text-lg text-emerald-400">Precision: 0.98 | Recall: 0.95</p>
+              <p className="text-lg text-emerald-700">Precision: 0.98 | Recall: 0.95</p>
               <p className="text-sm mt-2 max-w-md text-center">Batch vs Stream charts and PR sweeps are generated offline in the `docs/evaluation.md` via the Python Eval Harness.</p>
             </div>
           )}
 
           {activeTab === 'Observability' && (
             <div className="flex flex-col gap-4 max-w-5xl mx-auto h-full">
-              <h2 className="text-xl font-semibold border-b border-neutral-800 pb-2">Per-Delta Trace Waterfall</h2>
-              <div className="bg-[#111113] border border-neutral-800 p-4 rounded-lg flex-1">
-                 <div className="font-mono text-xs text-neutral-400 space-y-2">
-                    <div className="flex"><span className="w-24 text-neutral-500">0ms</span><span className="text-emerald-400">├── INGEST: Delta OFAC_9901 Received</span></div>
+              <h2 className="text-xl font-semibold border-b border-neutral-200 pb-2">Per-Delta Trace Waterfall</h2>
+              <div className="bg-white border border-neutral-200 p-4 rounded-lg flex-1">
+                 <div className="font-mono text-xs text-neutral-500 space-y-2">
+                    <div className="flex"><span className="w-24 text-neutral-500">0ms</span><span className="text-emerald-700">├── INGEST: Delta OFAC_9901 Received</span></div>
                     <div className="flex"><span className="w-24 text-neutral-500">12ms</span><span className="text-blue-400">├── MATCH: Candidate keys mapped</span></div>
-                    <div className="flex"><span className="w-24 text-neutral-500">18ms</span><span className="text-purple-400">├── SCORE: Jaro-Winkler computed</span></div>
-                    <div className="flex"><span className="w-24 text-neutral-500">30ms</span><span className="text-rose-400">├── GRAPH: Contagion fixpoint reached (Depth 2)</span></div>
-                    <div className="flex"><span className="w-24 text-neutral-500">42ms</span><span className="text-indigo-400">└── SINK: Alert UPSERT committed</span></div>
+                    <div className="flex"><span className="w-24 text-neutral-500">18ms</span><span className="text-purple-700">├── SCORE: Jaro-Winkler computed</span></div>
+                    <div className="flex"><span className="w-24 text-neutral-500">30ms</span><span className="text-rose-600">├── GRAPH: Contagion fixpoint reached (Depth 2)</span></div>
+                    <div className="flex"><span className="w-24 text-neutral-500">42ms</span><span className="text-indigo-700">└── SINK: Alert UPSERT committed</span></div>
                  </div>
               </div>
             </div>
@@ -628,26 +628,26 @@ function App() {
 
           {activeTab === 'Policy Copilot' && (
             <div className="flex flex-col gap-4 max-w-3xl mx-auto h-full">
-              <div className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg p-6 flex flex-col gap-4 overflow-y-auto">
-                 <div className="bg-neutral-800/50 p-4 rounded-lg max-w-[80%] self-end border border-neutral-700">
+              <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-6 flex flex-col gap-4 overflow-y-auto">
+                 <div className="bg-neutral-100/50 p-4 rounded-lg max-w-[80%] self-end border border-neutral-300">
                     <p className="text-sm">What is the policy regarding aggregate ownership thresholds?</p>
                  </div>
                  
-                 <div className="bg-indigo-950/20 p-4 rounded-lg max-w-[90%] self-start border border-indigo-900/50">
-                    <div className="flex items-center gap-2 mb-2 text-indigo-400">
+                 <div className="bg-indigo-50/20 p-4 rounded-lg max-w-[90%] self-start border border-indigo-900/50">
+                    <div className="flex items-center gap-2 mb-2 text-indigo-700">
                        <MessageSquare size={14}/> <span className="font-bold text-xs">Copilot</span>
                     </div>
-                    <div className="mb-3 text-xs font-mono text-neutral-500 bg-[#09090b] p-2 rounded border border-neutral-800">
+                    <div className="mb-3 text-xs font-mono text-neutral-500 bg-neutral-50 p-2 rounded border border-neutral-200">
                       &gt; Calling Tool: policy_search("aggregate ownership")<br/>
                       &gt; Retrieved 1 passage from Policy.md
                     </div>
-                    <p className="text-sm leading-relaxed text-neutral-300">
-                      According to the 50 percent rule, an entity is considered blocked if it is owned 50% or more, directly or indirectly, in the aggregate by one or more blocked persons. <span className="bg-indigo-900 text-indigo-300 px-1 rounded text-xs cursor-pointer">[Doc: Policy.md Page 1]</span>
+                    <p className="text-sm leading-relaxed text-neutral-700">
+                      According to the 50 percent rule, an entity is considered blocked if it is owned 50% or more, directly or indirectly, in the aggregate by one or more blocked persons. <span className="bg-indigo-100 text-indigo-800 px-1 rounded text-xs cursor-pointer">[Doc: Policy.md Page 1]</span>
                     </p>
                  </div>
               </div>
               <div className="flex gap-2">
-                 <input type="text" placeholder="Ask a question..." className="flex-1 bg-[#111113] border border-neutral-800 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-indigo-500" />
+                 <input type="text" placeholder="Ask a question..." className="flex-1 bg-white border border-neutral-200 rounded-lg px-4 py-3 text-sm text-neutral-900 focus:outline-none focus:border-indigo-500" />
                  <button className="bg-indigo-600 hover:bg-indigo-500 px-6 rounded-lg font-bold transition">Send</button>
               </div>
             </div>
@@ -655,7 +655,7 @@ function App() {
 
           {activeTab === 'Admin' && (
              <div className="flex flex-col items-center justify-center h-full text-neutral-500">
-              <Settings size={48} className="mb-4 opacity-20 text-neutral-400" />
+              <Settings size={48} className="mb-4 opacity-20 text-neutral-500" />
               <p className="text-lg">System Configuration & Users</p>
               <p className="text-sm mt-2">Manage Config Versions, Thresholds (T_STRONG, T_REVIEW), and Analysts.</p>
             </div>
@@ -667,16 +667,16 @@ function App() {
       {/* Kill Switch Modal */}
       {killSwitchOpen && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-          <div className="bg-[#111113] border border-rose-900 p-6 rounded-lg max-w-md w-full shadow-2xl">
+          <div className="bg-white border border-rose-200 p-6 rounded-lg max-w-md w-full shadow-2xl">
             <h2 className="text-xl font-bold text-rose-500 mb-4 flex items-center gap-2"><Power/> System Kill Switch</h2>
-            <p className="text-sm text-neutral-300 mb-4">You are about to change the engine mode. HALTED mode will stop all outbound actions and LLM calls immediately.</p>
+            <p className="text-sm text-neutral-700 mb-4">You are about to change the engine mode. HALTED mode will stop all outbound actions and LLM calls immediately.</p>
             <div className="flex flex-col gap-2 mb-6">
-               <label className="text-xs font-semibold text-neutral-400 uppercase">Reason for Mode Change</label>
-               <input type="text" placeholder="Required..." className="bg-[#09090b] border border-neutral-700 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500" />
+               <label className="text-xs font-semibold text-neutral-500 uppercase">Reason for Mode Change</label>
+               <input type="text" placeholder="Required..." className="bg-neutral-50 border border-neutral-300 rounded px-3 py-2 text-sm text-neutral-900 focus:outline-none focus:border-emerald-500" />
             </div>
             <div className="flex justify-end gap-3">
-               <button onClick={() => setKillSwitchOpen(false)} className="px-4 py-2 rounded text-neutral-400 hover:bg-neutral-800 transition">Cancel</button>
-               <button onClick={() => setKillSwitchOpen(false)} className="px-4 py-2 rounded bg-rose-600 hover:bg-rose-500 text-white font-bold transition">HALT SYSTEM</button>
+               <button onClick={() => setKillSwitchOpen(false)} className="px-4 py-2 rounded text-neutral-500 hover:bg-neutral-100 transition">Cancel</button>
+               <button onClick={() => setKillSwitchOpen(false)} className="px-4 py-2 rounded bg-rose-600 hover:bg-rose-500 text-neutral-900 font-bold transition">HALT SYSTEM</button>
             </div>
           </div>
         </div>
