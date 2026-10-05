@@ -559,7 +559,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white border border-neutral-200 rounded-lg shadow-sm overflow-hidden flex-1">
+              <div className="bg-white border border-neutral-200 rounded-lg shadow-sm overflow-y-auto flex-1">
                 <table className="w-full text-left text-sm">
                   <thead className="bg-neutral-50 text-neutral-500 font-medium border-b border-neutral-200">
                     <tr>
