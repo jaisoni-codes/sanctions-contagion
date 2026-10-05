@@ -131,7 +131,7 @@ const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY, data }: any) => {
     <>
       <path id={id} className="react-flow__edge-path" d={path} markerEnd="url(#arrow)" strokeWidth={2} stroke={isHovered ? '#10b981' : '#94a3b8'} fill="none" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} />
       <foreignObject width={140} height={60} x={midX - 70} y={midY - 30} className="overflow-visible pointer-events-auto" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <div className="bg-white border border-neutral-200 px-2 py-1 rounded text-[10px] font-bold text-center shadow-sm cursor-pointer relative group flex items-center justify-center m-2">
+        <div className="bg-white border text-neutral-900 border-neutral-200 px-2 py-1 rounded text-[10px] font-bold text-center shadow-sm cursor-pointer relative group flex items-center justify-center m-2">
            {data.pct}%
            <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 hidden group-hover:block bg-neutral-900 text-white p-2 rounded w-48 text-left z-50">
              <p className="font-bold border-b border-neutral-700 pb-1 mb-1">Source Evidence</p>

@@ -53,7 +53,7 @@ const CustomEdge = ({ id, sourceX, sourceY, targetX, targetY, data }: any) => {
     <>
       <path id={id} className="react-flow__edge-path" d={path} markerEnd="url(#arrow)" strokeWidth={1.5} stroke="#64748b" fill="none" />
       <foreignObject width={60} height={30} x={midX - 30} y={midY - 15} className="overflow-visible">
-        <div className="bg-white border border-neutral-200 px-1 py-0.5 rounded text-[9px] font-bold text-center text-neutral-600 m-1">
+        <div className="bg-white border border-neutral-200 px-1 py-0.5 rounded text-[9px] font-bold text-center text-neutral-900 m-1">
            {data.pct}%
         </div>
       </foreignObject>
