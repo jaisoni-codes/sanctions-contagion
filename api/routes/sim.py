@@ -28,22 +28,26 @@ def run_scenario(scenario_id: str):
         with open(fixture_path, "r") as f:
             data = json.load(f)
             steps = data.get("steps", [])
+            assertions = data.get("assertions", [])
+            graph = data.get("graph", {"nodes": [], "edges": []})
     else:
-        # Fallback if fixture doesn't exist
-        steps = [
-            {"stage": 1, "desc": "Delta received", "elapsed": 10},
-            {"stage": 2, "desc": "Names cleaned", "elapsed": 20},
-            {"stage": 7, "desc": "Result check: PASS", "elapsed": 10, "result": "PASS"}
-        ]
+        # Fallback
+        steps = []
+        assertions = []
+        graph = {"nodes": [], "edges": []}
         
-    runs[run_id] = {"scenario_id": scenario_id, "steps": steps, "status": "COMPLETED"}
+    runs[run_id] = {"scenario_id": scenario_id, "steps": steps, "assertions": assertions, "graph": graph, "status": "COMPLETED"}
     return {"run_id": run_id}
 
 @router.get("/runs/{run_id}/steps")
 def get_run_steps(run_id: str):
     if run_id not in runs:
         raise HTTPException(status_code=404, detail="Run not found")
-    return {"steps": runs[run_id]["steps"]}
+    return {
+        "steps": runs[run_id]["steps"],
+        "assertions": runs[run_id]["assertions"],
+        "graph": runs[run_id]["graph"]
+    }
 
 @router.post("/runs/{run_id}/reset")
 def reset_run(run_id: str):

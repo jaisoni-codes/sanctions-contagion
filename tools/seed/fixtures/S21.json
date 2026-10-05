@@ -4,22 +4,22 @@
     {
       "stage": 1,
       "desc": "Delta received (Mohammed Khan)",
-      "elapsed": 5
+      "elapsed": 9
     },
     {
       "stage": 2,
       "desc": "Names cleaned and match keys built (mohammad khan)",
-      "elapsed": 29
+      "elapsed": 26
     },
     {
       "stage": 3,
       "desc": "Candidates found (11456 of 13807)",
-      "elapsed": 45
+      "elapsed": 35
     },
     {
       "stage": 4,
       "desc": "Scores computed (11456 candidates: 303 STRONG, 287 REVIEW, 7864 DISCOUNTED, 2351 dropped)",
-      "elapsed": 59,
+      "elapsed": 42,
       "candidates": [
         {
           "party_name": "Mohammed Khan",
@@ -1131,13 +1131,31 @@
     {
       "stage": 6,
       "desc": "Alerts created (303 STRONG alerts)",
-      "elapsed": 38
+      "elapsed": 37
     },
     {
       "stage": 7,
-      "desc": "Result check: Expected 303 alerts. Actual 303 alerts. - PASS",
+      "desc": "Result check completed",
       "elapsed": 10,
       "result": "PASS"
     }
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "STRONG Matches",
+      "expected": "303",
+      "actual": "303",
+      "pass": true
+    },
+    {
+      "name": "Contagion",
+      "expected": "0",
+      "actual": "0",
+      "pass": true
+    }
+  ],
+  "graph": {
+    "nodes": [],
+    "edges": []
+  }
 }

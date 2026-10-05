@@ -15,6 +15,9 @@ function App() {
   // Scenario Lab State
   const [activeScenario, setActiveScenario] = useState('S04')
   const [scenarioSteps, setScenarioSteps] = useState<any[]>([])
+  const [scenarioAssertions, setScenarioAssertions] = useState<any[]>([])
+  const [scenarioGraph, setScenarioGraph] = useState<any>(null)
+
   const [currentStepIndex, setCurrentStepIndex] = useState(-1)
   const [isPlaying, setIsPlaying] = useState(false)
 
@@ -25,14 +28,16 @@ function App() {
     setIsPlaying(false)
     const API_URL = import.meta.env.VITE_API_URL || ''
     try {
-      const runRes = await fetch(`${API_URL}/api/sim/scenario/${id}/run`, { method: 'POST' })
-      const runData = await runRes.json()
-      const stepRes = await fetch(`${API_URL}/api/sim/runs/${runData.run_id}/steps`)
-      const stepData = await stepRes.json()
-      setScenarioSteps(stepData.steps)
-      setCurrentStepIndex(0)
-      setIsPlaying(true)
-    } catch (e) {
+        const runRes = await fetch(`${API_URL}/api/sim/scenario/${id}/run`, { method: 'POST' })
+        const runData = await runRes.json()
+        const stepRes = await fetch(`${API_URL}/api/sim/runs/${runData.run_id}/steps`)
+        const stepData = await stepRes.json()
+        setScenarioSteps(stepData.steps)
+        setScenarioAssertions(stepData.assertions || [])
+        setScenarioGraph(stepData.graph || null)
+        setCurrentStepIndex(0)
+        setIsPlaying(true)
+      } catch (e) {
       console.error(e)
     }
   }
@@ -458,187 +463,11 @@ function App() {
               </div>
 
               {/* Right: Validation & Graph */}
-              <div className="flex-1 flex flex-col gap-4">
-                 <div className="bg-white border border-neutral-200 rounded-lg p-5">
-                    <div className="flex justify-between items-center mb-2">
-                       <h3 className="font-semibold text-neutral-900">Result Validation</h3>
-                       {currentStepIndex === scenarioSteps.length - 1 && <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded font-bold uppercase tracking-widest shadow-[0_0_10px_rgba(16,185,129,0.5)]">PASS</span>}
-                    </div>
-                    <p className="text-xs text-neutral-500">
-                       {currentStepIndex === scenarioSteps.length - 1 ? 'Expected: Match. Actual: Match. No deviations detected.' : 'Waiting for completion...'}
-                    </p>
-                 </div>
-                 
-                 <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col items-center justify-center relative overflow-hidden">
-                    {/* Simplified dynamic graph based on active scenario */}
-                    {activeScenario === 'S01' && currentStepIndex >= 3 && (
-                        <div className="bg-rose-50 border-2 border-rose-200 p-2 rounded text-center z-10 w-28">
-                           <p className="font-bold text-xs text-rose-700">Rajeev</p>
-                           <p className="text-[10px] text-rose-600">Blocked</p>
-                        </div>
-                    )}
-                    {activeScenario === 'S04' && currentStepIndex >= 4 && (
-                      <>
-                        <div className="flex gap-16 mb-12">
-                           <div className="bg-rose-50 border-2 border-rose-200 p-2 rounded text-center z-10 w-28">
-                             <p className="font-bold text-xs text-rose-700">Rajeev</p>
-                             <p className="text-[10px] text-rose-600">Blocked</p>
-                           </div>
-                           <div className="bg-rose-50 border-2 border-rose-200 p-2 rounded text-center z-10 w-28">
-                             <p className="font-bold text-xs text-rose-700">Sunita</p>
-                             <p className="text-[10px] text-rose-600">Blocked</p>
-                           </div>
-                        </div>
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                            <path d="M 180 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
-                            <path d="M 320 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
-                        </svg>
-                        <div className="absolute flex gap-24 top-[140px] text-xs font-bold text-emerald-700 z-20">
-                            <span>30%</span>
-                            <span>25%</span>
-                        </div>
-                        <div className="bg-neutral-50 border-2 border-emerald-700 p-3 rounded text-center z-10 w-32">
-                             <p className="font-bold text-sm text-emerald-800">Delta Ltd</p>
-                             <p className="text-[10px] text-emerald-700 mt-1">OWNERSHIP_BLOCK</p>
-                        </div>
-                      </>
-                    )}
-                    {activeScenario === 'S05' && currentStepIndex >= 4 && (
-                      <>
-                        <div className="mb-12 bg-rose-50 border-2 border-rose-200 p-2 rounded text-center z-10 w-28">
-                             <p className="font-bold text-xs text-rose-700">Rajeev</p>
-                             <p className="text-[10px] text-rose-600">Blocked</p>
-                        </div>
-                        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                            <path d="M 250 120 L 250 200" stroke="#10b981" strokeWidth="2" fill="none" strokeDasharray="4,4" className="animate-pulse" />
-                        </svg>
-                        <div className="absolute flex gap-24 top-[140px] text-xs font-bold text-emerald-700 z-20">
-                            <span>50%</span>
-                        </div>
-                        <div className="flex gap-4">
-                          <div className="bg-neutral-50 border-2 border-emerald-700 p-3 rounded text-center z-10 w-32">
-                               <p className="font-bold text-sm text-emerald-800">Exact 50 Ltd</p>
-                               <p className="text-[10px] text-emerald-700 mt-1">OFAC: BLOCKED</p>
-                          </div>
-                          <div className="bg-neutral-50 border-2 border-neutral-300 p-3 rounded text-center z-10 w-32 opacity-50">
-                               <p className="font-bold text-sm text-neutral-800">Exact 50 Ltd</p>
-                               <p className="text-[10px] text-neutral-500 mt-1">EU: PASS</p>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                 </div>
+                <ScenarioGraph 
+                   graph={currentStepIndex === scenarioSteps.length - 1 ? scenarioGraph : null} 
+                   assertions={currentStepIndex === scenarioSteps.length - 1 ? scenarioAssertions : null} 
+                />
               </div>
-            </div>
-          )}
-
-          {activeTab === 'Alert Queue' && (
-            <div className="flex flex-col gap-4 max-w-7xl mx-auto h-full">
-              <div className="flex justify-between items-center">
-                 <h2 className="text-xl font-semibold">Active Alert Queue</h2>
-                 <div className="flex gap-2">
-                    <input type="text" placeholder="Filter alerts..." className="bg-neutral-50 border border-neutral-200 rounded px-3 py-1.5 text-sm text-neutral-900" />
-                    <button className="bg-neutral-100 px-3 py-1.5 rounded text-sm hover:bg-neutral-200 transition">Filter</button>
-                 </div>
-              </div>
-              <div className="bg-white border border-neutral-200 rounded-lg overflow-hidden flex-1 flex flex-col">
-                  <table className="w-full text-sm text-left">
-                    <thead className="bg-neutral-50 text-neutral-500 border-b border-neutral-200">
-                      <tr>
-                        <th className="px-4 py-3 font-medium">Alert ID</th>
-                        <th className="px-4 py-3 font-medium">Subject</th>
-                        <th className="px-4 py-3 font-medium">Tier</th>
-                        <th className="px-4 py-3 font-medium">Score</th>
-                        <th className="px-4 py-3 font-medium">Status</th>
-                        <th className="px-4 py-3 font-medium">Assignee</th>
-                        <th className="px-4 py-3 font-medium">Age</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-neutral-800">
-                      {alerts.map((alert: any) => (
-                        <tr key={alert.id} className="hover:bg-neutral-100/30 transition cursor-pointer">
-                          <td className="px-4 py-4 font-mono text-neutral-500">{alert.id}</td>
-                          <td className="px-4 py-4 font-medium">{alert.party_name}</td>
-                          <td className="px-4 py-4">
-                            <span className={`px-2 py-0.5 rounded font-bold text-xs ${alert.tier === 'STRONG' ? 'text-rose-600 bg-rose-50/30 border border-rose-200' : 'text-amber-700 bg-amber-50/30 border border-amber-200'}`}>{alert.tier}</span>
-                          </td>
-                          <td className="px-4 py-4 font-mono">{alert.score?.toFixed(2)}</td>
-                          <td className="px-4 py-4 text-neutral-500">{alert.status}</td>
-                          <td className="px-4 py-4 text-neutral-500">Unassigned</td>
-                          <td className="px-4 py-4 text-neutral-500">{alert.time_to_flag_ms}ms</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'Sanctions Lists' && (
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto h-full">
-              <h2 className="text-xl font-semibold border-b border-neutral-200 pb-2">Sanctions Regimes & Versions</h2>
-              <div className="grid grid-cols-2 gap-4">
-                 {['OFAC SDN', 'UN Consolidated', 'EU Consolidated', 'UK HMT'].map(regime => (
-                   <div key={regime} className="bg-white border border-neutral-200 rounded-lg p-5">
-                      <div className="flex justify-between items-center mb-3">
-                         <h3 className="font-semibold">{regime}</h3>
-                         <span className="bg-emerald-100/30 border border-emerald-800 text-emerald-700 px-2 py-0.5 rounded text-xs">Active v412</span>
-                      </div>
-                      <p className="text-sm text-neutral-500 mb-4">Last update: 2 minutes ago</p>
-                      <button className="w-full bg-neutral-100 hover:bg-neutral-200 text-sm py-2 rounded transition">Browse Entries</button>
-                   </div>
-                 ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'Audit & Compliance' && (
-            <div className="flex flex-col gap-6 max-w-6xl mx-auto h-full">
-              <div className="flex justify-between items-center border-b border-neutral-200 pb-2">
-                 <h2 className="text-xl font-semibold">Immutable Audit Trail</h2>
-                 <button className="flex items-center gap-2 bg-indigo-100/30 border border-indigo-200 text-indigo-800 hover:bg-indigo-100 px-4 py-2 rounded text-sm transition">
-                    <CheckCircle size={16}/> Verify Hash Chain
-                 </button>
-              </div>
-              <div className="flex gap-6 h-full">
-                 <div className="flex-1 bg-white border border-neutral-200 rounded-lg p-5 flex flex-col">
-                    <h3 className="font-semibold mb-4 text-sm text-neutral-500 uppercase">Decision Timeline</h3>
-                    <div className="flex-1 border-l-2 border-neutral-200 ml-4 pl-4 space-y-6">
-                       <div className="relative">
-                          <div className="absolute -left-[23px] top-1 h-3 w-3 rounded-full bg-emerald-500 ring-4 ring-[#111113]"></div>
-                          <p className="text-xs text-neutral-500 mb-1">Today, 10:15 AM</p>
-                          <p className="font-medium">Alert CONFIRMED by Analyst_1</p>
-                          <p className="text-xs text-neutral-500 mt-1">Reason: "DOB and ID match exactly. Escaping homonym check."</p>
-                       </div>
-                       <div className="relative">
-                          <div className="absolute -left-[23px] top-1 h-3 w-3 rounded-full bg-indigo-500 ring-4 ring-[#111113]"></div>
-                          <p className="text-xs text-neutral-500 mb-1">Today, 10:12 AM</p>
-                          <p className="font-medium">System Generated AI Explanation</p>
-                       </div>
-                       <div className="relative">
-                          <div className="absolute -left-[23px] top-1 h-3 w-3 rounded-full bg-rose-500 ring-4 ring-[#111113]"></div>
-                          <p className="text-xs text-neutral-500 mb-1">Today, 10:10 AM</p>
-                          <p className="font-medium">Alert Created (STRONG)</p>
-                          <p className="text-xs font-mono text-neutral-500 mt-1">Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p>
-                       </div>
-                    </div>
-                 </div>
-                 <div className="w-80 bg-white border border-neutral-200 rounded-lg p-5">
-                    <h3 className="font-semibold mb-4 text-sm text-neutral-500 uppercase">As-Of Query</h3>
-                    <div className="space-y-4">
-                       <div>
-                         <label className="text-xs text-neutral-500 block mb-1">Party ID</label>
-                         <input type="text" className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-sm text-neutral-900" defaultValue="CUST_RAJU_01"/>
-                       </div>
-                       <div>
-                         <label className="text-xs text-neutral-500 block mb-1">Time Point</label>
-                         <input type="datetime-local" className="w-full bg-neutral-50 border border-neutral-200 rounded p-2 text-sm text-neutral-900 [color-scheme:light]" />
-                       </div>
-                       <button className="w-full bg-neutral-100 hover:bg-neutral-200 py-2 rounded text-sm transition">Query State</button>
-                    </div>
-                 </div>
-              </div>
-            </div>
           )}
 
           {activeTab === 'Metrics & Evaluation' && (

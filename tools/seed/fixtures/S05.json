@@ -4,22 +4,22 @@
     {
       "stage": 1,
       "desc": "Delta received (Rajeev Malhotra)",
-      "elapsed": 14
+      "elapsed": 9
     },
     {
       "stage": 2,
       "desc": "Names cleaned and match keys built (rajeev malhotra)",
-      "elapsed": 30
+      "elapsed": 22
     },
     {
       "stage": 3,
       "desc": "Candidates found (3306 of 13807)",
-      "elapsed": 34
+      "elapsed": 38
     },
     {
       "stage": 4,
       "desc": "Scores computed (3306 candidates: 3 STRONG, 0 REVIEW, 301 DISCOUNTED, 10501 dropped)",
-      "elapsed": 42,
+      "elapsed": 46,
       "candidates": [
         {
           "party_name": "Rajeev Malhotra",
@@ -1030,18 +1030,64 @@
     {
       "stage": 5,
       "desc": "Ownership rounds (Exact 50 Ltd: 50 >= 50 OFAC, 50 > 50 EU)",
-      "elapsed": 56
+      "elapsed": 53
     },
     {
       "stage": 6,
       "desc": "Alerts created (OFAC: 2 alerts. EU: 1 alert)",
-      "elapsed": 58
+      "elapsed": 56
     },
     {
       "stage": 7,
-      "desc": "Result check: Expected OFAC 2 alerts, EU 1 alert. Actual matched. - PASS",
+      "desc": "Result check completed",
       "elapsed": 10,
       "result": "PASS"
     }
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "OFAC Result",
+      "expected": "2 alerts",
+      "actual": "2 alerts",
+      "pass": true
+    },
+    {
+      "name": "EU Result",
+      "expected": "1 alert",
+      "actual": "1 alert",
+      "pass": true
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "n1",
+        "data": {
+          "label": "Rajeev",
+          "status": "seed",
+          "regime": "OFAC",
+          "list_id": "LIST_1"
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Exact 50 Ltd",
+          "status": "blocked"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n2",
+        "data": {
+          "pct": 50,
+          "doc_type": "registry",
+          "doc_ref": "REF-3"
+        }
+      }
+    ]
+  }
 }

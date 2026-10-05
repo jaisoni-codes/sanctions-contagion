@@ -3,23 +3,23 @@
   "steps": [
     {
       "stage": 1,
-      "desc": "Delta received (Sunita)",
-      "elapsed": 14
+      "desc": "Delta received (Sunita and Rajeev Malhotra)",
+      "elapsed": 5
     },
     {
       "stage": 2,
-      "desc": "Names cleaned and match keys built (sunita)",
-      "elapsed": 16
+      "desc": "Names cleaned and match keys built (sunita, rajeev malhotra)",
+      "elapsed": 23
     },
     {
       "stage": 3,
-      "desc": "Candidates found (3304 of 13807)",
-      "elapsed": 40
+      "desc": "Candidates found (6610 of 13807)",
+      "elapsed": 32
     },
     {
       "stage": 4,
-      "desc": "Scores computed (3304 candidates: 1 STRONG, 0 REVIEW, 301 DISCOUNTED, 10503 dropped)",
-      "elapsed": 78,
+      "desc": "Scores computed (6610 candidates: 4 STRONG, 0 REVIEW, 602 DISCOUNTED, 7197 dropped)",
+      "elapsed": 52,
       "candidates": [
         {
           "party_name": "Sunita",
@@ -31,6 +31,50 @@
             "COUNTRY_RESIDENCE_MATCH"
           ],
           "tier": "STRONG"
+        },
+        {
+          "party_name": "Rajeev Malhotra",
+          "dob": "1980-01-01",
+          "country": "India",
+          "score": 1.0,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "R. Malhotra",
+          "dob": "1980-01-01",
+          "country": "India",
+          "score": 0.9744444444444444,
+          "reasons": [
+            "DOB_EXACT",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rajiv Malhotara",
+          "dob": null,
+          "country": "India",
+          "score": 0.9581025641025642,
+          "reasons": [
+            "MISSING_DOB",
+            "COUNTRY_RESIDENCE_MATCH"
+          ],
+          "tier": "STRONG"
+        },
+        {
+          "party_name": "Rajeev Malhotra",
+          "dob": "1990-12-12",
+          "country": "UK",
+          "score": 0.6499999999999999,
+          "reasons": [
+            "DOB_CONFLICT",
+            "COUNTRY_RESIDENCE_CONFLICT"
+          ],
+          "tier": "DISCOUNTED"
         },
         {
           "party_name": "Company 0",
@@ -981,64 +1025,89 @@
             "ENTITY_TYPE_MISMATCH"
           ],
           "tier": "REJECT"
-        },
-        {
-          "party_name": "Company 95",
-          "dob": null,
-          "country": "US",
-          "score": 0.0,
-          "reasons": [
-            "ENTITY_TYPE_MISMATCH"
-          ],
-          "tier": "REJECT"
-        },
-        {
-          "party_name": "Company 96",
-          "dob": null,
-          "country": "US",
-          "score": 0.0,
-          "reasons": [
-            "ENTITY_TYPE_MISMATCH"
-          ],
-          "tier": "REJECT"
-        },
-        {
-          "party_name": "Company 97",
-          "dob": null,
-          "country": "US",
-          "score": 0.0,
-          "reasons": [
-            "ENTITY_TYPE_MISMATCH"
-          ],
-          "tier": "REJECT"
-        },
-        {
-          "party_name": "Company 98",
-          "dob": null,
-          "country": "US",
-          "score": 0.0,
-          "reasons": [
-            "ENTITY_TYPE_MISMATCH"
-          ],
-          "tier": "REJECT"
         }
       ]
     },
     {
       "stage": 5,
       "desc": "Ownership rounds (Delta Ltd: 30 + 25 = 55 >= 50, blocked)",
-      "elapsed": 55
+      "elapsed": 40
     },
     {
       "stage": 6,
       "desc": "Alerts created (2 alerts: 1 direct, 1 ownership)",
-      "elapsed": 64
+      "elapsed": 63
     },
     {
       "stage": 7,
-      "desc": "Result check: Expected: 2 alerts. Actual: 2 alerts. - PASS",
+      "desc": "Result check completed",
       "elapsed": 10,
       "result": "PASS"
     }
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "Direct Matches",
+      "expected": "2",
+      "actual": "2",
+      "pass": true
+    },
+    {
+      "name": "Ownership Contagion",
+      "expected": "Delta Ltd Blocked",
+      "actual": "Delta Ltd Blocked",
+      "pass": true
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "n1",
+        "data": {
+          "label": "Rajeev",
+          "status": "seed",
+          "regime": "OFAC",
+          "list_id": "LIST_1"
+        }
+      },
+      {
+        "id": "n2",
+        "data": {
+          "label": "Sunita",
+          "status": "seed",
+          "regime": "OFAC",
+          "list_id": "LIST_1"
+        }
+      },
+      {
+        "id": "n3",
+        "data": {
+          "label": "Delta Ltd",
+          "status": "blocked"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "e1",
+        "source": "n1",
+        "target": "n3",
+        "data": {
+          "pct": 30,
+          "doc_type": "MoA",
+          "doc_ref": "REF-1"
+        }
+      },
+      {
+        "id": "e2",
+        "source": "n2",
+        "target": "n3",
+        "data": {
+          "pct": 25,
+          "doc_type": "AoA",
+          "doc_ref": "REF-2"
+        }
+      }
+    ]
+  }
 }

@@ -4,22 +4,22 @@
     {
       "stage": 1,
       "desc": "Delta received (Rahul Sharma)",
-      "elapsed": 13
+      "elapsed": 11
     },
     {
       "stage": 2,
       "desc": "Names cleaned and match keys built (rahul sharma)",
-      "elapsed": 23
+      "elapsed": 15
     },
     {
       "stage": 3,
       "desc": "Candidates found (4476 of 13807)",
-      "elapsed": 25
+      "elapsed": 30
     },
     {
       "stage": 4,
       "desc": "Scores computed (4476 candidates: 508 STRONG, 665 REVIEW, 301 DISCOUNTED, 9331 dropped)",
-      "elapsed": 47,
+      "elapsed": 73,
       "candidates": [
         {
           "party_name": "Rahul Sharma",
@@ -1126,18 +1126,36 @@
     {
       "stage": 5,
       "desc": "Ownership rounds (No contagion found)",
-      "elapsed": 11
+      "elapsed": 19
     },
     {
       "stage": 6,
       "desc": "Alerts created (508 STRONG alerts)",
-      "elapsed": 23
+      "elapsed": 26
     },
     {
       "stage": 7,
-      "desc": "Result check: Expected 508 alerts. Actual 508 alerts. - PASS",
+      "desc": "Result check completed",
       "elapsed": 10,
       "result": "PASS"
     }
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "STRONG Matches",
+      "expected": "508",
+      "actual": "508",
+      "pass": true
+    },
+    {
+      "name": "Contagion",
+      "expected": "0",
+      "actual": "0",
+      "pass": true
+    }
+  ],
+  "graph": {
+    "nodes": [],
+    "edges": []
+  }
 }

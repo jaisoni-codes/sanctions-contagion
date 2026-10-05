@@ -4,7 +4,7 @@
     {
       "stage": 1,
       "desc": "Delta received (Rajeev Malhotra)",
-      "elapsed": 12
+      "elapsed": 8
     },
     {
       "stage": 2,
@@ -14,12 +14,12 @@
     {
       "stage": 3,
       "desc": "Candidates found (3306 of 13807)",
-      "elapsed": 39
+      "elapsed": 41
     },
     {
       "stage": 4,
       "desc": "Scores computed (3306 candidates: 3 STRONG, 0 REVIEW, 301 DISCOUNTED, 10501 dropped)",
-      "elapsed": 57,
+      "elapsed": 40,
       "candidates": [
         {
           "party_name": "Rajeev Malhotra",
@@ -1030,18 +1030,46 @@
     {
       "stage": 5,
       "desc": "Ownership rounds (No contagion found)",
-      "elapsed": 15
+      "elapsed": 16
     },
     {
       "stage": 6,
       "desc": "Alerts created (3 STRONG alerts)",
-      "elapsed": 29
+      "elapsed": 33
     },
     {
       "stage": 7,
-      "desc": "Result check: Expected 3 alerts. Actual 3 alerts. - PASS",
+      "desc": "Result check completed",
       "elapsed": 10,
       "result": "PASS"
     }
-  ]
+  ],
+  "assertions": [
+    {
+      "name": "STRONG Matches",
+      "expected": "3",
+      "actual": "3",
+      "pass": true
+    },
+    {
+      "name": "Contagion",
+      "expected": "0",
+      "actual": "0",
+      "pass": true
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "n1",
+        "data": {
+          "label": "Rajeev Malhotra",
+          "status": "seed",
+          "regime": "OFAC",
+          "list_id": "LIST_1"
+        }
+      }
+    ],
+    "edges": []
+  }
 }
